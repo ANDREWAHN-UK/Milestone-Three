@@ -1,71 +1,70 @@
 {% extends "base.html" %}
 {% block content %}
+
+
+
 <div class="container-reg">
 
     <div class="reg-content">
         <h1>Sunset Canteras</h1>
     </div>
-    <form id="form">
-        <div class="social">
 
-            <div class="title">Get Started</div>
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div>
+            <div class="social">
 
-            <div class="question">
-                Already Have an Account? <br />
+                <div class="title">Get Started</div>
+
+                <div class="question">
+                    Already Have an Account? <br />
+
+                </div>
+
+                <div class="reg-btn"> Sign In </div>
 
             </div>
 
-            <div class="reg-btn"> Sign In </div>
+            <!-- username -->
+            <div class="row">
+                <div class="input-field col">
+                    <label for="username">Username</label>
+                    <i class="fas fa-user-plus"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15" class="validate"
+                        placeholder="Sunset lover" required>
+                    
+                </div>
 
+            </div>
+            <!-- email -->
+            <div class ="row">
+            <div class="input-field col">
+                <label for="email">Email</label>
+                <i class="far fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="abc@gmail.com" />                
+            </div>               
+            </div>
+
+            <!-- password -->
+            <div class="row">
+                <div class="input-field ">
+                    <label for="password">Password</label>
+                    <i class="fas fa-user-lock "></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" class="validate"
+                        required>                    
+                </div>
+            </div>
+            <!-- register -->
+            <div class="row">
+
+                <button class="reg-submit-button" id="btn" type="submit">Register</button>
+            </div>
         </div>
-        <!-- User Name input -->
-
-        <div>
-            <label for="username">User Name</label>
-            <i class="fas fa-user"></i>
-
-            <input type="text" name="username" id="username" placeholder="Sunset lover" />
-            <!-- the 2 icons below are activated by javascript -->
-            <i class="fas fa-thumbs-down failure-icon"></i>
-            <i class="fas fa-thumbs-up success-icon"></i>
-
-            <div class="error"></div>
-
-        </div>
-        <!-- Email input -->
-
-        <div>
-            <label for="email">Email</label>
-            <i class="far fa-envelope"></i>
-
-            <input type="email" name="email" id="email" placeholder="abc@gmail.com" />
-
-            <i class="fas fa-thumbs-down failure-icon"></i>
-            <i class="fas fa-thumbs-up success-icon"></i>
-
-            <div class="error"></div>
-
-        </div>
-        <!--   Password input -->
-
-        <div>
-            <label for="password">Password</label>
-            <i class="fas fa-lock"></i>
-
-            <input type="password" name="password" id="password" placeholder="Password here" />
-
-            <i class="fas fa-thumbs-down failure-icon"></i>
-            <i class="fas fa-thumbs-up success-icon"></i>
-
-            <div class="error"></div>
-
-        </div>
-
-        <button class="reg-submit-button" id="btn" type="submit">Submit</button>
     </form>
+
+
+
+
 </div>
-
-
 
 
 {% endblock %}
