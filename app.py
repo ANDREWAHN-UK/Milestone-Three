@@ -27,7 +27,7 @@ def go_home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in db
+      
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -40,11 +40,32 @@ def register():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
-        # put the new user into 'session' cookie
+        
         session["user"] = request.form.get("username").lower()
         flash("You have been successfully registered, congratulations!")
     return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        
+        if existing_user:
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Hello, {}".format(request.form.get("username")))
+            else:
+                flash("Incorrect username/password, please try again")
+                return redirect(url_for("login"))
+      
+        else:
+            flash("Incorrect username/password, please try again")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
