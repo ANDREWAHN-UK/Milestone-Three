@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/go_home")
 def go_home():
     reviews = mongo.db.reviews.find()
-    return render_template("reviews.html", reviews=reviews)
+    return render_template("home.html", reviews=reviews)
 
 
 if __name__ == "__main__":
