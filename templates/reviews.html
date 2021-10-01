@@ -2,14 +2,14 @@
 {% block content %}
 
 <h2>This is the Reviews page!</h2>
-    {% for review in reviews %}
-        {{   review.place  }}<br>
-        {{   review.place_type  }}<br>
-        {{   review.visit_type  }}<br>
-        {{   review.rating  }}<br>
-        {{   review.review  }}<br>
-        {{   review.created_by  }}<br>
+{% for review in reviews %}
+{{   review.place  }}<br>
+{{   review.place_type  }}<br>
+{{   review.visit_type  }}<br>
+{{   review.rating  }}<br>
+{{   review.review  }}<br>
+{{   review.created_by  }}<br>
 
-        
-    {% endfor %}
-    {% endblock  %}
+
+{% endfor %}
+{% endblock  %}

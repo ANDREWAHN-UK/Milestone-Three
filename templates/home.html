@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!-- the block content allows this to change dependent on the page -->
+{% block content %}
+<!-- this div has the content actually seen -->
+<div class="content">
+    <h1>Sunset Canteras Guide Book</h1>
+    <small>Andrew Ahn</small>
+    <p>Welcome to the Guidebook. Please feel free to read reviews. Please register to add your own review.
+    </p>
+
+
+    <img src="{{ url_for ('static', filename= 'images/Las-Canteras_0.jpg')}}" alt="Las Canteras beach">
+
+    {% for review in reviews %}
+    {{   review.place  }}<br>
+    {{   review.place_type  }}<br>
+    {{   review.visit_type  }}<br>
+    {{   review.rating  }}<br>
+    {{   review.review  }}<br>
+    {{   review.created_by  }}<br>
+
+
+    {% endfor %}
+
+</div>
+{% endblock %}
