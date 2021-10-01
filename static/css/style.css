@@ -12,6 +12,11 @@ body {
     color: #222;
 }
 
+a {
+    color: white;
+    text-decoration: none; /* no underline */
+  }
+
 .container{
     background-color: #fafafa;
     transform-origin: top left;
