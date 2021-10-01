@@ -17,7 +17,9 @@ a {
     text-decoration: none; /* no underline */
   }
 
-.container{
+
+  /* BASE.HTML */
+.container-base{
     background-color: #fafafa;
     transform-origin: top left;
     transition: transform 0.5s linear;
@@ -123,7 +125,7 @@ nav ul li + li + li {
     transform: translateX(-200%);
 }
 
-
+/* HOME PAGE */
 .content img{
     max-width: 100%;
 }
@@ -146,3 +148,4 @@ nav ul li + li + li {
     color: #333;
     line-height: 1.5;
 }
+
