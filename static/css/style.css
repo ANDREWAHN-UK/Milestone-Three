@@ -29,6 +29,10 @@ a {
     padding: 50px;
 }
 
+
+.flashes{
+  text-align: center;
+}
 /* when show nav is activated, main page moves away, like a page in a book */
 .container-base.show-nav{
     transform: rotate(-20deg);
@@ -238,7 +242,7 @@ form {
 /* makes the labels look uniform */
 label {
   display: block;
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
 /* this  affects the text input fields */
@@ -254,7 +258,8 @@ form div input {
 /* gives some space between each div */
 form div {
   position: relative;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* highlights the area where a user is typing */
@@ -268,27 +273,6 @@ form div i {
   padding: 10px;
 }
 
-/* this highlights the success and failure icons */
-.failure-icon,
-.error {
-  color: rgb(133, 36, 36);
-}
-
-.success-icon {
-  color: rgb(36, 116, 36);
-}
-
-.error {
-  font-size: 14.5px;
-  margin-top: 5px;
-}
-
-/* this keeps the icons hidden until the javascript activation */
-.success-icon,
-.failure-icon {
-  right: 0;
-  opacity: 0;
-}
 
 
 /* this styles the submit button */
