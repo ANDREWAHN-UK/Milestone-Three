@@ -101,7 +101,7 @@ def create_review():
 
     if request.method == "POST":
         # these pick up the id names in the form on create_review.html
-        review = {
+        reviews = {
             "title": request.form.get("title"),             
             "image_url": request.form.get("image_url"),
             "created_by": session["user"],
