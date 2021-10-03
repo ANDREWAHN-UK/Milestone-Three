@@ -316,8 +316,7 @@ form div i {
 }
 
 
-/* profile */
-
-.profile{
-  text-align: center;
+/* reviews */
+.create-review{
+background-image: url(/static/images/sunset-canteras.jpg);
 }
