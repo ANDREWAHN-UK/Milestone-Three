@@ -97,7 +97,7 @@
             </div>
 
             <div class="row">
-                <a class="btn-flat red-text right" href="{{ url_for('my_page', username=session['user']) }}">
+                <a class="btn-flat red-text right" href="{{ url_for('profile', username=session['user']) }}">
                    <strong>Cancel</strong>
                 </a>
                 <button class="btn-flat right" type="submit" name="action">
