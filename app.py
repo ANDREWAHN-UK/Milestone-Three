@@ -94,6 +94,33 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/create_review", methods=["GET", "POST"])
+def create_review():
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        # these pick up the id names in the form on create_review.html
+        review = {
+            "title": request.form.get("title"),             
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"],
+            "location": request.form.get("location"),            
+            "date_picker": request.form.get("date_picker"),
+            "place_type": request.form.get("place_type"),
+            "rating": request.form.get("rating"),
+            "review": request.form.get("review"),
+            "date": datetime.datetime.now().strftime("%d %B, %Y")
+        }
+        mongo.db.blog.insert_one(reviews)
+        flash("Review added successfully")
+        return redirect(url_for("create_review"))
+
+    posts = mongo.db.blog.find()
+    return render_template(
+        "create_review.html", posts=posts, page_title="Create Review")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
