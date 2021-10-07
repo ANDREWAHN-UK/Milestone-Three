@@ -320,3 +320,26 @@ form div i {
 .create-review{
 background-image: url(/static/images/sunset-canteras.jpg);
 }
+
+.scale-rating label{
+  width: 100%;
+}
+
+.heading-3 {
+  color: grey;
+}
+
+.poor{
+  float: left;
+}
+
+.best {
+  float: right;
+}
+
+.review-input{
+  background:#43a7d5;
+  color:#fff;
+  padding:12px;
+  border:0
+}
