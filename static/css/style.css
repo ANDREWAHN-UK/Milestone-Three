@@ -342,7 +342,7 @@ form div i {
   margin: auto;
 }
 
-#place_review, #visit_type, #place_name, #visit_date{
+#place_review {
   margin:auto;
   width: 100%;
 }
