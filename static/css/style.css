@@ -333,14 +333,13 @@ form div i {
 .review-button{
     padding: 10px 5px;
     width: 20%;
-    display: flex;
     gap: 15px;
     justify-content: center;
     align-items: center;
     border: 2px solid #0a0a0a;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #2a998a;
+    background-color: #2a998a28;
     color: #fff;
     font-size: 20px;
   }
