@@ -364,6 +364,8 @@ form div i {
 }
 
 /* this gives stars to click on */
+
+/* these are empty stars */
 .star-rating {
   margin: 25px 0 0px;
   font-size: 0;
@@ -373,6 +375,50 @@ form div i {
   height: 35px;
   overflow: hidden;
   position: relative;
-  background: url(/static/images/star.png);
+  background: url(/static/images/empty\ star.png);
   background-size: contain;
+}
+
+
+/* these are full stars */
+.star-rating i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+background: url(/static/images/star.png); 
+ background-size: contain;
+}
+
+.star-rating input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.star-rating input:hover + i,
+.star-rating input:checked + i {
+  opacity: 1;
+}
+.star-rating i ~ i {
+  width: 40%;
+}
+.star-rating i ~ i ~ i {
+  width: 60%;
+}
+.star-rating i ~ i ~ i ~ i {
+  width: 80%;
+}
+.star-rating i ~ i ~ i ~ i ~ i {
+  width: 100%;
 }
