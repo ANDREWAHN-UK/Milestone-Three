@@ -331,3 +331,11 @@ form div i {
   background-image: url(/static/images/sunset-canteras.jpg);
   background-size: cover;
 }
+
+#place_rating{
+  width: 30vw;
+}
+
+#place_rating i {
+  color: #2a998a;
+}
