@@ -1,111 +1,100 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid create-review">
-    <div class="row">
+<div class="container-fluid review">
+    <h4>Please rate your visit</h4>
 
-        <div class="col-md-12">
-            <h3 class="center-align">Create Review</h3>
+    <form action="{{ url_for('create_review') }}" method="post">
+        <label for="">1.Your overall experience</label><br>
+
+        <span class="star-rating">
+            <input type="radio" name="rating1" value="1"><i></i>
+            <input type="radio" name="rating1" value="2"><i></i>
+            <input type="radio" name="rating1" value="3"><i></i>
+            <input type="radio" name="rating1" value="4"><i></i>
+            <input type="radio" name="rating1" value="5"><i></i>
+        </span>
+
+        <div class="clear"></div>
+
+        <hr class="survey-hr">
+
+        <label>2. Value</label><br>
+        <span class="star-rating">
+            <input type="radio" name="rating2" value="1"><i></i>
+            <input type="radio" name="rating2" value="2"><i></i>
+            <input type="radio" name="rating2" value="3"><i></i>
+            <input type="radio" name="rating2" value="4"><i></i>
+            <input type="radio" name="rating2" value="5"><i></i>
+        </span>
+
+        <div class="clear"></div> 
+        <hr class="survey-hr">
+      <label>3. Friendliness and courtesy shown to you during your visit</label><br><br/>
+        <div class ="heading-3">
+          <span class="poor">
+           POOR
+          </span>
+          <span class="best">
+            BEST
+          </span>
+
         </div>
 
-        <form action="{{url_for('create_review')}}">
-            <!-- this is the nam,e of the place being reviewed -->
-            <div class="row">
-                <div class="input-field col-md-12">
-                    <input id="title" name="title" type="text" aria-describedby="title" minlength="5" maxlength="20"
-                        class="validate"></input>
-                    <label for="title">Name</label>
-                </div>
-            </div>
-           <!-- this invites the user to choose a category for the place reviewed  -->
-            <div class="row">
-                <div class="input-field col-md-12">
-                    <select id="place_type" name="place_type" type="text" class="validate" required>
-                        <option value="" disabled selected>Select Option</option>
-                        <option value="bar">Bar</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="restaurant">Restaurant</option>
-                        <option value="club">Club</option>
-                        <option value="shop">Shop</option>
-                        <option value="bakery">Bakery</option>
-                        <option value="ice-cream-parlour">Ice Cream Parlour</option>
-                        <option value="supermarket">Supermarket</option>                       
-                    </select>
-                    <label>Star rating</label>
-                </div>
-            </div>
-            <!-- this invites the user to select a reason for their visit -->
+        <span class="scale-rating">
+            <label value="1">
+            <input type="radio" name="rating" >
+            <label ></label>
+            </label>
+            <label value="2">
+            <input type="radio" name="rating" >
+            <label></label>
+            </label>
+            <label value="3">
+            <input type="radio" name="rating">
+            <label ></label>
+            </label>
+            <label value="4">
+            <input type="radio" name="rating">
+            <label></label>
+            </label>
+            <label value="5">
+            <input type="radio" name="rating">
+            <label></label>
+            </label>
+            <label value="6">
+            <input type="radio" name="rating">
+            <label></label>
+            </label>
+            <label value="7">
+            <input type="radio" name="rating">
+            <label ></label>
+            </label>
+            <label value="8">
+            <input type="radio" name="rating">
+            <label></label>
+            </label>
+            <label value="9">
+            <input type="radio" name="rating">
+            <label ></label>
+            </label>
+            <label value="10">
+            <input type="radio" name="rating" value="10">
+            <label ></label>
+            </label>
+          </span>
+           
+            <div class="clear"></div> 
+            <hr class="survey-hr"> 
+          <label for="commentText">4. Your review:</label><br/><br/>
+          <textarea cols="75" name="commentText" rows="5" ></textarea><br>
+          <br>
+            <div class="clear"></div> 
+          <input class ="review-input" type="submit" value="Submit your review"> 
+          </form>
+          </div>
 
-            <div class="row">
-                <div class="input-field col-md-12">
-                    <select id="place_type" name="place_type" type="text" class="validate" required>
-                        <option value="" disabled selected>Select Option</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="brunch">Brunch</option>
-                        <option value="lunch">Lunch</option>
-                        <option value="dinner">Dinner</option>
-                        <option value="dessert">Dessert</option>
-                        <option value="coffee-tea">Coffee/Tea</option>
-                        <option value="snacks">Snacks (e.g. ice cream)</option>
-                        <option value="drinks">Drinks</option>       
-                        <option value="late-night-food">Late Night Food</option>                    
-                    </select>
-                    <label>Why did you visit this place?</label>
-                </div>
-            </div>
-            <!-- this asks the user for the date they visited -->
-            <div class="row">
-                <div class="input-field col-md-12">                  
-                   <input id="date_picker" name="date_picker" type="text" aria-describedby="date_picker"
-                       class="datepicker validate" required>
-                   <label for="date_picker">When did you visit</label>
-                </div>
-             </div>
-             <!-- this invites the user to write a few words about the place -->
-            <div class="row">
-                <div class="input-field col-md-12">
-                    <input id="review" name="review" type="text" aria-describedby="review" minlength="5" maxlength="500"
-                        class="validate"></input>
-                    <label for="description">Write your review here</label>
-                </div>
-            </div>    
-            <!-- this invites the user to upload images -->
-            <div class="row">
-                <div class="input-field col-md-12">
-                   <input id="image_url" name="image_url" type="url" aria-describedby="image_url"
-                      class="validate"></input>
-                   <label for="image_url">Image</label>
-                   <span>Please add url for image</span>
-                </div>
-             </div>        
-            <!-- this is the field used to select a star rating -->
-            <div class="row">
-                <div class="input-field col-md-12">
-                    <select id="rating" name="rating" type="text" class="validate" required>
-                        <option value="" disabled selected>Select Option</option>
-                        <option value="one"><i class="fas fa-star"></i></option>
-                        <option value="two"><i class="fas fa-star"></i><i class="fas fa-star"></i>/option>
-                        <option value="three"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></option>
-                        <option value="four"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i></option>
-                        <option value="five"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></option>
-                    </select>
-                    <label>Star rating</label>
-                </div>
-            </div>
 
-            <div class="row">
-                <a class="btn-flat red-text right" href="{{ url_for('profile', username=session['user']) }}">
-                   <strong>Cancel</strong>
-                </a>
-                <button class="btn-flat right" type="submit" name="action">
-                   <strong>Add</strong>                    
-                </button>
-             </div>
-
-        </form>
-    </div>
+    </form>
 </div>
 {% endblock %}
