@@ -330,8 +330,6 @@ form div i {
   background-image: url(/static/images/sunset-canteras.jpg);
   background-size: cover;
   width: 100%;
-  max-width: 780px;
-  background: #fff;
   margin: 0 auto;
   padding: 15px;
   box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.3);
