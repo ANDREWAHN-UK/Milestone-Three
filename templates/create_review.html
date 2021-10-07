@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid review center-align">
-    <h4>Please rate your visit</h4>
+<div class="container-fluid review">
+    <h4 class="center-align">Please rate your visit</h4>
 
     <form class = "review-form" action="{{ url_for('create_review') }}" method="post">
         <label for="">1.Your overall experience</label><br>
@@ -17,7 +17,7 @@
 
         <div class="clear"></div>
 
-        <hr class="survey-hr">
+        <hr class="review-hr">
 
         <label>2. Value</label><br>
         <span class="star-rating">
@@ -29,7 +29,7 @@
         </span>
 
         <div class="clear"></div> 
-        <hr class="survey-hr">
+        <hr class="review-hr">
       
            
             
