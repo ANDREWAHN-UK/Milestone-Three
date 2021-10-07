@@ -97,7 +97,8 @@ def logout():
 @app.route("/create_review", methods=["GET", "POST"])
 def create_review():
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("create_review.html", categories=categories)
+    category_two = mongo.db.visit_type.find().sort("type", 1)
+    return render_template("create_review.html", categories=categories, category_two=category_two)
 
 
 if __name__ == "__main__":
