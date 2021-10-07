@@ -339,11 +339,17 @@ form div i {
 
 .review-form{
   width:60vw;
+  height:80vw;
   margin: auto;
   text-align: center;
+  background-color: #ffef104d;
 }
 
 #place_review {
   margin:auto;
   width: 100%;
+}
+
+#visit_date, #place_name{
+  width: 40%;
 }
