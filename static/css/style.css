@@ -315,7 +315,7 @@ form div i {
 
 .review-form{
   width:60vw;
-  height:60vw;
+  height:70vw;
   margin: auto;
   text-align: center;
   background-color: #ffef104d;
@@ -329,6 +329,28 @@ form div i {
 #visit_date, #place_name{
   width: 40%;
 }
+
+.review-button{
+    padding: 10px 5px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #0a0a0a;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2a998a;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .review-button:hover{
+    color: #2a998a;
+    box-shadow: 0 0 5px #2a998a;
+    text-shadow: 0 0 5px #2a998a;
+  }
+
 
 /* MEDIA QUERIES */
 
