@@ -321,6 +321,8 @@ form div i {
   margin: auto;
   text-align: center;
   background-color: #ffef104d;
+  flex-direction: column;
+  display: flex;
 }
 
 #place_review {
