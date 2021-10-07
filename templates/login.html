@@ -9,18 +9,18 @@
         <h1>Sunset Canteras</h1>
     </div>
 
-    <form   method="POST" action="{{ url_for('register') }}">
+    <form  class="form-login" method="POST" action="{{ url_for('login') }}">
         <div>
             <div class="social">
 
                 <div class="title">Get Started</div>
 
                 <div class="question">
-                    Already Have an Account? <br />
+                    Don't Have an Account? <br />
 
                 </div>
 
-                <div class="reg-btn">   <a href="{{ url_for('login') }}" >Sign In</a> </div>
+                <div class="login-btn">   <a href="{{ url_for('register') }}" >Register</a> </div>
 
             </div>
 
@@ -56,7 +56,7 @@
             <!-- register -->
             <div class="row">
 
-                <button class="reg-btn" id="btn" type="submit">Register</button>
+                <button class="login-btn" id="btn" type="submit">Log In</button>
             </div>
         </div>
     </form>
