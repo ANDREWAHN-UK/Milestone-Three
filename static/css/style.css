@@ -299,6 +299,11 @@ form div i {
   text-shadow: 0 0 5px #ffee10;
 }
 
+.login-btn:hover{
+  color: #2a998a;
+  box-shadow: 0 0 5px #2a998a;
+  text-shadow: 0 0 5px #2a998a;
+}
 
 @media (max-width: 900px) {
   .container-reg {
@@ -306,7 +311,7 @@ form div i {
 
   }
 
-  form,
+  form, .form-login,
   .reg-content, .login-content {
     width: 100%;
     top: 5vh;
@@ -319,7 +324,7 @@ form div i {
 }
 
 @media (max-width: 425px) {
-  form {
+  form, .form-login {
     padding: 20px;
   }
 }
