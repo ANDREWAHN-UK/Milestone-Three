@@ -305,8 +305,37 @@ form div i {
   text-shadow: 0 0 5px #2a998a;
 }
 
+/* Reviews */
+.container-review{
+  height: 100vh;
+  width: 80vw;
+  background-image: url(/static/images/sunset-canteras.jpg);
+  background-size: cover;  
+  display: flex;
+  flex-direction: row;
+}
+
+.review-form{
+  width:60vw;
+  height:80vw;
+  margin: auto;
+  text-align: center;
+  background-color: #ffef104d;
+}
+
+#place_review {
+  margin:auto;
+  width: 100%;
+}
+
+#visit_date, #place_name{
+  width: 40%;
+}
+
+/* MEDIA QUERIES */
+
 @media (max-width: 900px) {
-  .container-reg {
+  .container-reg, .container-review {
     flex-direction: column;
 
   }
@@ -327,29 +356,4 @@ form div i {
   form, .form-login {
     padding: 20px;
   }
-}
-
-/* Reviews */
-.container-review{
-  height: 100vh;
-  width: 80vw;
-  background-image: url(/static/images/sunset-canteras.jpg);
-  background-size: cover;  
-}
-
-.review-form{
-  width:60vw;
-  height:80vw;
-  margin: auto;
-  text-align: center;
-  background-color: #ffef104d;
-}
-
-#place_review {
-  margin:auto;
-  width: 100%;
-}
-
-#visit_date, #place_name{
-  width: 40%;
 }
