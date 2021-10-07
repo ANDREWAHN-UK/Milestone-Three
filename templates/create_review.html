@@ -12,12 +12,14 @@
                     <label for="category_name">Place Type</label>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="">--Please choose an option--</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="bar">Bar</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="club">Club</option>
+                        <option value="shop">Shop</option>
+                        <option value="bakery">Bakery</option>
+                        <option value="ice-cream-parlour">Ice cream parlour</option>
+                        <option value="supermarket">Supermarket</option>
                     </select>
                     
                 </div>
@@ -37,12 +39,12 @@
                     <label for="place_rating">Your Rating</label>
                     <select id="place_rating" name="place_rating" class="validate" required>
                         <option value="">--Please choose an option--</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
+                        <i class="far fa-star"></i> <option value="one">One Star</option>
+                        <i class="far fa-star"></i><option value="two">Two Stars</option>
+                        <i class="far fa-star"></i><option value="three">Three Stars</option>
+                        <i class="far fa-star"></i><option value="four">Four Stars</option>
+                        <i class="far fa-star"></i><option value="five">Five Stars</option>
+                        
                     </select>
                     
                 </div>
@@ -52,14 +54,20 @@
                 <div class="input-field col-md-12">
                     
                     <label for="visit_type">Purpose of visit</label>
-                    <select id="visit_type" name="visit_type" class="validate" required>
+                    <select id="visit_type" multiple name="visit_type" class="validate" required>
                         <option value="">--Please choose an option--</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="brunch">Brunch</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="coffee-or-tea">Coffee or Tea</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="late-night-food">Late Night Food</option>
+                        <option value="dancing">Dancing</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="other">Other</option>
                     </select>
                     
                 </div>
@@ -67,9 +75,9 @@
             <div class="row">
                 <div class="input-field col-md-12">
                    
-                    <label for="place_review"><i class="fas fa-align-left"></i>Your review</label> 
+                    <label for="place_review">Your review</label> 
                     <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
-                        class="materialize-textarea validate" required></textarea>
+                        class="materialize-textarea validate" required><i class="fas fa-align-left"></i></textarea>
                     
                 </div>
             </div>
