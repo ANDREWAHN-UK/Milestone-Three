@@ -2,9 +2,11 @@
 {% block content %}
 
 <div class="container-fluid review">
-    <h4 class="center-align">Please rate your visit</h4>
 
-    <form class = "review-form" action="{{ url_for('create_review') }}" method="post">
+
+    <form class="review-form" action="{{ url_for('create_review') }}" method="post">
+        <h4 class="center-align">Please rate your visit</h4>
+
         <label for="">1.Your overall experience</label><br>
 
         <span class="star-rating">
@@ -28,20 +30,20 @@
             <input type="radio" name="rating2" value="5"><i></i>
         </span>
 
-        <div class="clear"></div> 
+        <div class="clear"></div>
         <hr class="review-hr">
-      
-           
-            
-          <label for="commentText">3. Your review:</label><br/><br/>
-          <textarea cols="75" name="commentText" rows="15" ></textarea><br>
-          <br>
-            <div class="clear"></div> 
-          <input class ="review-input" type="submit" value="Submit your review"> 
-          </form>
-          </div>
 
 
+
+        <label for="commentText">3. Your review:</label><br /><br />
+        <textarea cols="75" name="commentText" rows="15"></textarea><br>
+        <br>
+        <div class="clear"></div>
+        <input class="review-input" type="submit" value="Submit your review">
     </form>
+</div>
+
+
+</form>
 </div>
 {% endblock %}
