@@ -332,9 +332,11 @@ form div i {
 /* Reviews */
 .container-review{
   height: 100vh;
-  width: 100vw;
+  width: 800vw;
   background-image: url(/static/images/sunset-canteras.jpg);
   background-size: cover;
+  display: flex;
+  flex-direction: row;
 }
 
 .review-form{
