@@ -323,3 +323,11 @@ form div i {
     padding: 20px;
   }
 }
+
+Reviews
+.container-review{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/static/images/sunset-canteras.jpg);
+  background-size: cover;
+}
