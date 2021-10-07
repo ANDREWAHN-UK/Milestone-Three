@@ -319,6 +319,7 @@ form div i {
 /* reviews */
 .review{
 background-image: url(/static/images/sunset-canteras.jpg);
+background-size: cover;
 }
 
 
