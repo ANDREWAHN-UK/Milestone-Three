@@ -96,6 +96,22 @@ def logout():
 
 @app.route("/create_review", methods=["GET", "POST"])
 def create_review():
+
+    if request.method == "POST":
+        
+        review = {
+            "category_name": request.form.get("category_name"),
+            "place_rating": request.form.get("place_rating"),
+            "place_review": request.form.get("place_review"),
+            "visit_date": request.form.get("visit_date"),
+            "visit_type": request.form.get("visit_type"),
+            "place_name": request.form.get("place_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("go_home"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     visits = mongo.db.visit_type.find().sort("type", 1)
     return render_template(
