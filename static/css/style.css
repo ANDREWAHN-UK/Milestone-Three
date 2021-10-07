@@ -340,6 +340,7 @@ form div i {
 .review-form{
   width:60vw;
   margin: auto;
+  text-align: center;
 }
 
 #place_review {
