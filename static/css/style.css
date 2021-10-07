@@ -1,165 +1,167 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    overflow-x: hidden;
-    margin: 0;
-    background-color: #333;
-    color: #222;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #333;
+  color: #222;
 }
 
 a {
-    color: white;
-    text-decoration: none; /* no underline */
-  }
-
- 
-
-  /* BASE.HTML */
-.container-base{
-    background-color: #fafafa;
-    transform-origin: top left;
-    transition: transform 0.5s linear;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 50px;
+  color: white;
+  text-decoration: none;
+  /* no underline */
 }
 
 
-.flashes{
+
+/* BASE.HTML */
+.container-base {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+
+.flashes {
   text-align: center;
 }
+
 /* when show nav is activated, main page moves away, like a page in a book */
-.container-base.show-nav{
-    transform: rotate(-20deg);
+.container-base.show-nav {
+  transform: rotate(-20deg);
 }
 
 /* when container has show-nav class, the nav list is to be visible */
-.container-base.show-nav + nav li{
-    transform: translateX(0);
-    transition-delay: 0.3s;
+.container-base.show-nav+nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
 }
 
 /* when show nav is activated on container, this affects the circle */
-.container-base.show-nav .circle{
-    transform: rotate(-70deg);
+.container-base.show-nav .circle {
+  transform: rotate(-70deg);
 }
 
 
-.circle-container{
-    position: fixed;
-    top: -100px;
-    left: -100px;
-    z-index: 100;
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 100;
 }
 
-.circle{
-    background-color: #2a998a;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.5s linear;
+.circle {
+  background-color: #2a998a;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
 }
 
 
-.circle button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100px;
-    background: transparent;
-    border: 0;
-    font-size: 26px;
-    color: #fff;
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
 }
 
-.circle button:focus{
-    outline: none;
+.circle button:focus {
+  outline: none;
 }
 
-.circle button#open{
-    left: 60%;
+.circle button#open {
+  left: 60%;
 }
 
-.circle button#close{
-    top: 60%;
-    transform: rotate(90deg);
-    transform-origin: top left;
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
 }
 
 nav {
-    position: fixed;
-    bottom: 40px;
-    left: 0;
-    z-index: 100;
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
 }
 
 nav ul {
-    list-style: none;
-    padding-left: 30px;
+  list-style: none;
+  padding-left: 30px;
 }
 
 /* this targets the items in the list */
-nav ul li{
-    text-transform: uppercase;
-    color: #fff;
-    margin: 40px 0;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in;
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
 }
 
 /* this targets the icons */
-nav ul li i{
-    font-size: 30px;
-    margin-right: 10px;
+nav ul li i {
+  font-size: 30px;
+  margin-right: 10px;
 }
 
 /* this line makes the 2nd li item apear on a diagonal gradient  */
-nav ul li + li{
-    margin-left: 15px;
-    transform: translateX(-150%);
+nav ul li+li {
+  margin-left: 15px;
+  transform: translateX(-150%);
 }
 
 /* this line makes the 3rd li item apear on a diagonal gradient */
-nav ul li + li + li {
-    margin-left: 30px;
-    transform: translateX(-200%);
+nav ul li+li+li {
+  margin-left: 30px;
+  transform: translateX(-200%);
 }
 
 /* HOME PAGE */
-.content img{
-    max-width: 100%;
+.content img {
+  max-width: 100%;
 }
 
 /* makes the call to action to register more obvious */
-.content a{
+.content a {
   color: rgb(129, 8, 8);
   font-size: 30px;
   font-weight: 400;
 }
 
-.content{
-    max-width: 1000px;
-    margin: 50px auto;
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
 }
 
-.content h1{
-    margin: 0;
+.content h1 {
+  margin: 0;
 }
 
-.content small{
-    color: #555;
-    font-style: italic;
+.content small {
+  color: #555;
+  font-style: italic;
 }
 
-.content p{
-    color: #333;
-    line-height: 1.5;
+.content p {
+  color: #333;
+  line-height: 1.5;
 }
 
 /* REGISTER/login*/
@@ -174,32 +176,36 @@ this affects the whole container */
 /* this affects the container. 
 Position: relative +
 margin: auto centre the form and keep it responsive */
-.reg-content, form, .login-content {
+.reg-content,
+form,
+.login-content {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   height: 70vh;
   top: 10vh;
   padding: 50px;
   position: relative;
-  margin: auto;  
-  
+  margin: auto;
+
 }
 
 /* this is the left half of the form */
-.reg-content, .login-content{
+.reg-content,
+.login-content {
   justify-content: space-around;
-  width: 55%; 
+  width: 55%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   background-image: url("/static/images/canteras\ 3.jpg");
 }
 
-.login-content{
+.login-content {
   background-image: url("/static/images/canteras4.jpg");
 }
 
-.reg-content h1, .login-content h1{
+.reg-content h1,
+.login-content h1 {
   color: #fff;
   text-align: center;
   font-size: 30px;
@@ -228,7 +234,8 @@ form {
 
 /* this styles the btn at the top and bottom of the form */
 
-.reg-btn, .login-btn{
+.reg-btn,
+.login-btn {
   padding: 10px 5px;
   width: 100%;
   display: flex;
@@ -242,9 +249,11 @@ form {
   color: #fff;
   font-size: 20px;
 }
-.login-btn{
+
+.login-btn {
   background-color: #c4b10b;
 }
+
 .question {
   font-size: 15px;
   text-align: center;
@@ -284,7 +293,7 @@ form div i {
   padding: 10px;
 }
 
- .reg-btn:hover {
+.reg-btn:hover {
   color: #ffee10;
   box-shadow: 0 0 5px #ffee10;
   text-shadow: 0 0 5px #ffee10;
@@ -294,7 +303,7 @@ form div i {
 @media (max-width: 900px) {
   .container-reg {
     flex-direction: column;
-    
+
   }
 
   form,
@@ -306,7 +315,7 @@ form div i {
   .reg-btn {
     flex-direction: column;
   }
-  
+
 }
 
 @media (max-width: 425px) {
@@ -317,35 +326,53 @@ form div i {
 
 
 /* reviews */
-.review{
-background-image: url(/static/images/sunset-canteras.jpg);
-background-size: cover;
+.review {
+  background-image: url(/static/images/sunset-canteras.jpg);
+  background-size: cover;
+  width: 100%;
+  max-width: 780px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 15px;
+  box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.3);
 }
 
-
-.review-form{
+/* this affects the box holding the review */
+.review-form {
   background-color: aquamarine;
 }
 
-.scale-rating label{
+/* this affects the submit button and the text area */
+.review form input,
+.review form textarea {
   width: 100%;
+  border: 1px solid #ddd;
 }
 
-.heading-3 {
-  color: grey;
+/* this is the submit button */
+.review-input {
+  background: #43a7d5;
+  color: #fff;
+  padding: 12px;
+  border: 0
 }
 
-.poor{
-  float: left;
+/* this is a custom line break */
+.review-hr {
+  margin: 10px 0;
+  border: .5px solid #ddd;
 }
 
-.best {
-  float: right;
-}
-
-.review-input{
-  background:#43a7d5;
-  color:#fff;
-  padding:12px;
-  border:0
+/* this gives stars to click on */
+.star-rating {
+  margin: 25px 0 0px;
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  width: 175px;
+  height: 35px;
+  overflow: hidden;
+  position: relative;
+  background: url(/static/images/star.png);
+  background-size: contain;
 }
