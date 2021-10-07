@@ -13,11 +13,12 @@
     <img src="{{ url_for ('static', filename= 'images/Las-Canteras_0.jpg')}}" alt="Las Canteras beach">
 
     {% for review in reviews %}
-    {{   review.place  }}<br>
-    {{   review.place_type  }}<br>
+    {{   review.place_name }}<br>
+    {{   review.category_name  }}<br>
     {{   review.visit_type  }}<br>
-    {{   review.rating  }}<br>
-    {{   review.review  }}<br>
+    {{   review.visit_date  }}<br>
+    {{   review.place_rating  }}<br>
+    {{   review.place_review  }}<br>
     {{   review.created_by  }}<br>
 
 
