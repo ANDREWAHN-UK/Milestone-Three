@@ -5,59 +5,54 @@
 
     <div class="row">
 
-        <form class="col-md-12" method="POST" action="">
+        <form class="col s12" method="POST" action="">
             <div class="row">
-                <h3>Add A Review</h3>
-
-                <div class="input-field col-md-12">
-                    <label for="place_name">Where did you go?</label>
-                    <i class="fas fa-user-circle "></i>
-                    <input id="place_name" name="place_name" type="text" class="validate">
-
-                </div>
-
-                <div class="input-field col-md-12">
-                    <label for="category_name">Type of place</label>
-                    <i class="fas fa-user-circle "></i>
-                    <select name="category_name" id="category_name" class="validate" required>
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
-                        
                         {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name}}</option>
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
-
-                </div>           
-
-                <div class="input-field col-md-12">
-                    <label for="visit_date">Date of your visit</label>
-                    <i class="fas fa-user-circle "></i>
-                    <input id="visit_date" name="visit_date" type="date" class="validate" value="2018-10-22"
-                        min="2018-01-01" max="2018-12-31">
-
+					<label for="category_name">Task Category</label>
+				</div>
+			</div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="task_name" name="task_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="task_name">Task Name</label>
                 </div>
-
-                <div class="input-field col-md-12">
-                    <label for="place_rating">Overall rating</label>
-                    <i class="fas fa-star"></i>
-
-                    <input list="place_rating">
-                    <datalist id="place_rating" name="place_rating" size="5" class="validate">
-                        <option value="Terrible">
-                        <option value="Below Average">
-                        <option value="Average">
-                        <option value="Quite good">
-                        <option value="Outstanding">
-                    </datalist>
-
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="task_description" name="task_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="task_description">Task Description</label>
                 </div>
-
-                <div class="input-field col-md-12">
-                    <label for="place_review">Your review</label><i class="fas fa-user-circle "></i>
-                    <textarea id="place_review" name="place_review" type="text" class="validate" cols="75"
-                        name="commentText" rows="15"></textarea><br>
-                    <br>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
+                    <label for="due_date">Due Date</label>
                 </div>
+            </div>
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+						<label for="is_urgent">
+                            <input type="checkbox" id="is_urgent" name="is_urgent">
+                            <span class="lever"></span>
+                            Is Urgent
+                        </label>
+					</div>
+				</div>
+			</div>
 
 
 
