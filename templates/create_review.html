@@ -8,10 +8,10 @@
         <form class="col-md-12 review-form" method="POST" action="">
             <div class="row">
                 <div class="input-field col-md-12">
-                    
-                    <label for="category_name">Place Type</label>
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="">--Please choose an option--</option>
+
+                    <label for="category_name">Place Type</label><i class="fas fa-coffee"></i>
+                    <select id="category_name" multiple name="category_name" class="validate" required>
+                        <option value="">--Please choose an option (hold Control to select multiple options)--</option>
                         <option value="cafe">Cafe</option>
                         <option value="bar">Bar</option>
                         <option value="restaurant">Restaurant</option>
@@ -21,41 +21,41 @@
                         <option value="ice-cream-parlour">Ice cream parlour</option>
                         <option value="supermarket">Supermarket</option>
                     </select>
-                    
+
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col-md-12">
-                   
+
                     <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
                     <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate"
                         required>
-                    
+
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col-md-12">
-                    
-                    <label for="place_rating">Your Rating</label>
+
+                    <label for="place_rating">Your Rating</label><i class="far fa-star"></i>
                     <select id="place_rating" name="place_rating" class="validate" required>
                         <option value="">--Please choose an option--</option>
-                        <i class="far fa-star"></i> <option value="one">One Star</option>
-                        <i class="far fa-star"></i><option value="two">Two Stars</option>
-                        <i class="far fa-star"></i><option value="three">Three Stars</option>
-                        <i class="far fa-star"></i><option value="four">Four Stars</option>
-                        <i class="far fa-star"></i><option value="five">Five Stars</option>
-                        
+                        <option value="one">One Star</option>
+                        <option value="two">Two Stars</option>
+                        <option value="three">Three Stars</option>
+                        <option value="four">Four Stars</option>
+                        <option value="five">Five Stars</option>
+
                     </select>
-                    
+
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col-md-12">
-                    
-                    <label for="visit_type">Purpose of visit</label>
+
+                    <label for="visit_type">Purpose of visit</label><i class="fas fa-utensils"></i>
                     <select id="visit_type" multiple name="visit_type" class="validate" required>
-                        <option value="">--Please choose an option--</option>
+                        <option value="">--Please choose an option (hold Control to select multiple options)--</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="brunch">Brunch</option>
                         <option value="lunch">Lunch</option>
@@ -69,21 +69,21 @@
                         <option value="shopping">Shopping</option>
                         <option value="other">Other</option>
                     </select>
-                    
+
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col-md-12">
-                   
-                    <label for="place_review">Your review</label> 
+
+                    <label for="place_review">Your review</label><i class="fas fa-book"></i>
                     <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
-                        class="materialize-textarea validate" required><i class="fas fa-align-left"></i></textarea>
-                    
+                        class="materialize-textarea validate" required></textarea>
+
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col-md-12">
-                   
+
                     <label for="visit_date"> <i class="fas fa-calendar-alt "></i>Visit date:</label>
 
                     <input type="date" id="visit_date" name="visit_date" value="2021-10-22" min="2016-01-01"
