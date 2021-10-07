@@ -19,7 +19,13 @@
                 <div class="input-field col-md-12">
                     <label for="place_type">Type of place</label>
                     <i class="fas fa-user-circle "></i>
-                    <input id="place_type" name="place_type" type="text" class="validate">
+                    <select name="place_type" id="place_type" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        
+                        {% for category in categories %}
+                        <option value="{{ category.place_type }}">{{ category.place_type }}</option>
+                        {% endfor %}
+                    </select>
 
                 </div>
 
@@ -41,15 +47,15 @@
                 <div class="input-field col-md-12">
                     <label for="place_rating">Overall rating</label>
                     <i class="fas fa-star"></i>
-                    
+
                     <input list="place_rating">
-                    <datalist id="place_rating" name="place_rating"size ="5"class="validate">
+                    <datalist id="place_rating" name="place_rating" size="5" class="validate">
                         <option value="Terrible">
                         <option value="Below Average">
                         <option value="Average">
                         <option value="Quite good">
                         <option value="Outstanding">
-                        </datalist>
+                    </datalist>
 
                 </div>
 
