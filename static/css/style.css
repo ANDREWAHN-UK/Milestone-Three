@@ -391,7 +391,7 @@ background: url(/static/images/star.png);
  background-size: contain;
 }
 
-/* .star-rating input {
+.star-rating input {
    opacity: 0;
   display: inline-block;
   width: 5%;
@@ -400,21 +400,5 @@ background: url(/static/images/star.png);
   padding: 0;
   z-index: 2;
   position: relative;
-} */
+}
 
-.star-rating input:hover + i,
-.star-rating input:checked + i {
-  opacity: 1;
-}
-.star-rating i ~ i {
-  width: 40%;
-}
-.star-rating i ~ i ~ i {
-  width: 60%;
-}
-.star-rating i ~ i ~ i ~ i {
-  width: 80%;
-}
-.star-rating i ~ i ~ i ~ i ~ i {
-  width: 100%;
-}
