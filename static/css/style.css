@@ -307,12 +307,12 @@ form div i {
   }
 
   form,
-  .reg-content {
+  .reg-content, .login-content {
     width: 100%;
     top: 5vh;
   }
 
-  .reg-btn {
+  .reg-btn, .login-btn {
     flex-direction: column;
   }
 
