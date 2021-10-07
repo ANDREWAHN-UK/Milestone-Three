@@ -317,8 +317,13 @@ form div i {
 
 
 /* reviews */
-.create-review{
+.review{
 background-image: url(/static/images/sunset-canteras.jpg);
+}
+
+
+.review-form{
+  background-color: aquamarine;
 }
 
 .scale-rating label{
