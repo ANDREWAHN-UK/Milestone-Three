@@ -111,9 +111,11 @@ def create_review():
             "place_name": request.form.get("place_name"),
             "created_by": session["user"]
         }
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         mongo.db.reviews.insert_one(review)
         flash("Review Successfully Added")
-        return redirect(url_for("profile"))
+        return redirect(url_for("profile", username=username, review=review))
 
     categories = mongo.db.category.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating")
@@ -138,8 +140,11 @@ def edit_review(review_id):
             "place_name": request.form.get("place_name"),
             "created_by": session["user"]
         }
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Edited")
+        return redirect(url_for("profile", username=username, review=review))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     categories = mongo.db.category.find().sort("category_name", 1)
@@ -150,8 +155,10 @@ def edit_review(review_id):
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
     flash("Review Successfully Deleted")
-    return redirect(url_for("profile"))
+    return redirect(url_for("profile", username=username, review=review))
 
 
 if __name__ == "__main__":
