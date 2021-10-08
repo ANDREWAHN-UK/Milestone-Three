@@ -6,6 +6,28 @@
     <div class="row ">
 
         <form class="col-md-12 review-form" method="POST" action="">
+
+            <div class="row">
+                <div class="input-field col-md-12">
+
+                    <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
+                    <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col-md-12">
+
+                    <label for="visit_date"> Visit date:</label>
+
+                    <input type="date" id="visit_date" name="visit_date" value="2021-10-22" min="2016-01-01"
+                        max="2022-12-31">
+                </div>
+            </div>
+
+
             <div class="row">
                 <div class="input-field col-md-12">
 
@@ -24,15 +46,7 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col-md-12">
 
-                    <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
-                    <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
-
-                </div>
-            </div>
             <div class="row">
                 <div class="input-field col-md-12">
 
@@ -81,20 +95,12 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col-md-12">
 
-                    <label for="visit_date"> Visit date:</label>
-
-                    <input type="date" id="visit_date" name="visit_date" value="2021-10-22" min="2016-01-01"
-                        max="2022-12-31">
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-12 center-align">
                     <i class="fas fa-plus-square right"></i>
-                     <button type="submit" class="review-button">
+                    <button type="submit" class="review-button">
                         Add Review
                     </button>
                 </div>
