@@ -118,12 +118,12 @@ def create_review():
         return redirect(url_for("profile", username=username, review=review))
 
     categories = mongo.db.category.find().sort("category_name", 1)
-    ratings = mongo.db.rating.find().sort("rating")
+    ratings = mongo.db.rating.find().sort("rating", 1)
     visits = mongo.db.visit.find().sort("type", 1)
-    users = mongo.db.users.find().sort("username", 1)
+    
     return render_template(
         "create_review.html",
-        categories=categories, visits=visits, ratings=ratings, users=users)
+        categories=categories, visits=visits, ratings=ratings, )
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
@@ -142,6 +142,7 @@ def edit_review(review_id):
         }
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+        review = list(mongo.db.reviews.find_one())
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Edited")
         return redirect(url_for("profile", username=username, review=review))
@@ -157,6 +158,8 @@ def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+    review = list(mongo.db.reviews.find_one())
+    
     flash("Review Successfully Deleted")
     return redirect(url_for("profile", username=username, review=review))
 
