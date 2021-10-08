@@ -330,7 +330,7 @@ form div i {
   width: 40%;
 }
 
-.review-button{
+.review-button, .edit-review-button, .delete-review-button{
     padding: 10px 5px;
     width: 20%;
     gap: 15px;
@@ -340,8 +340,17 @@ form div i {
     border-radius: 8px;
     cursor: pointer;
     background-color: #2a998a28;
-    color: #fff;
+    color: rgb(10, 10, 10);
     font-size: 20px;
+  }
+
+
+  .edit-review-button{
+    background-color: #ffee10;
+  }
+
+  .delete-review-button{
+    background-color: rgb(77, 7, 11);
   }
 
   .review-button:hover{
