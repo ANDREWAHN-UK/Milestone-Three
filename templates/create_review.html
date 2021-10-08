@@ -37,6 +37,16 @@
                 {% endfor %}
             </select>
         </div>
+        <!-- Allows the user to select a category. This valuie comes from the database -->
+        <div class="mb-3 review-field">
+            <label for="category_name">Type of Place</label>
+            <select id="category_name" name="category_name" class=" review-field validate" required>
+                <option value="">--Please choose an option--</option>
+                {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
         <!-- Allows user to select the reason for their visit. The values here are taken from the database -->
         <div class="mb-3 review-field">
             <label for="visit_type">Purpose of visit</label>
