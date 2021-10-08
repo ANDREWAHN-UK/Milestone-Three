@@ -1,98 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid container-review">
 
-    <div class="row ">
+<!-- Note that .review-field is needed not only in the class -mb-3(which acts as colums) but also in the classes 
+    attached to the select and image and text-area. Otherwise, these elements will not be responsive-->
 
-        <form class="col-md-12 review-form" method="POST" action="{{ url_for('create_review') }}">
+<div class="container-fluid container-review  align-items-center">
+    <form method="POST" action="{{ url_for('create_review') }}">
+        <!-- name of the place being reviewed -->
+        <div class="mb-3 review-field">
+            <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
+            <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate" required>
+        </div>
 
-            <div class="row">
-                <div class="input-field col-md-12">
+        <!-- allows user to upload images -->
+        <div class="mb-3 review-field">
+            <label for="image_url">Image(Please add url)</span></label>
 
-                    <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
-                    <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
+            <input id="image_url" name="image_url" type="url" aria-describedby="image_url"
+                class="review-field validate"></input>
+        </div>
 
-                </div>
-            </div>
+        <!-- allows user to select the visit date -->
+        <div class="mb-3 review-field">
+            <label for="visit_date"> Visit date:</label>
 
-            <div class="row">
-                <div class="input-field col-md-12">
+            <input type="date" id="visit_date" name="visit_date" value="2021-10-22" min="2016-01-01" max="2022-12-31">
+        </div>
+        <!-- Allows the user to select a rating. This rating choice is pulled from the database -->
+        <div class="mb-3 review-field">
+            <label for="place_rating">Your Rating</label>
+            <select id="place_rating" name="place_rating" class=" review-field validate" required>
+                <option value="">--Please choose a rating out of ten--</option>
+                {% for rating in ratings %}
+                <option value="{{ rating.rating }}">{{ rating.rating }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Allows user to select the reason for their visit. The values here are taken from the database -->
+        <div class="mb-3 review-field">
+            <label for="visit_type">Purpose of visit</label>
+            <select id="visit_type" value="1" multiple name="visit_type" class=" review-field validate" required>
+                <option value="">--Please choose an option (hold Control to select multiple options)--</option>
 
-                    <label for="visit_date"> Visit date:</label>
+                {% for visit in visits %}
+                <option value="{{ visit.type }}">{{ visit.type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Allows users to write a few words. The length can be adjusted if need be -->
+        <div class="mb-3 review-field">
+            <label for="place_review">Your review</label>
+            <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
+                class="review-field validate" required>
+            </textarea>
+        </div>
 
-                    <input type="date" id="visit_date" name="visit_date" value="2021-10-22" min="2016-01-01"
-                        max="2022-12-31">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col-md-12">
-
-                    <label for="place_rating">Your Rating</label>
-                    <select id="place_rating" name="place_rating" class="validate" required>
-                        <option value="">--Please choose a rating out of ten--</option>
-                        {% for rating in ratings %}
-                        <option value="{{ rating.rating }}">{{ rating.rating }}</option>
-                        {% endfor %}
-
-                    </select>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col-md-12">
-
-                    <label for="category_name">Place Type</label>
-                    <select id="category_name" value="2" multiple name="category_name" class="validate" required>
-                        <option value="">--Please choose an option (hold Control to select multiple options)--</option>
-
-                        {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="input-field col-md-12">
-
-                    <label for="visit_type">Purpose of visit</label>
-                    <select id="visit_type" value="5" multiple name="visit_type" class="validate" required>
-                        <option value="">--Please choose an option (hold Control to select multiple options)--</option>
-                        
-                        {% for visit in visits %}
-                        <option value="{{ visit.type }}">{{ visit.type }}</option>
-                        {% endfor %}
-                    </select>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col-md-12">
-
-                    <label for="place_review">Your review</label><i class="fas fa-book"></i>
-                    <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
-                        class="materialize-textarea validate" required></textarea>
-
-                </div>
-            </div>
+        <button type="submit" class="btn review-button"><strong>Create Review</strong> </button>
+    </form>
 
 
-            <div class="row">
-                <div class="col-md-12 center-align">
 
-                    <button type="submit" class="review-button">
-                        Add Review
-                    </button>
-                </div>
-            </div>
 
-        </form>
-    </div>
 </div>
 {% endblock %}

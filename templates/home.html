@@ -1,19 +1,29 @@
 {% extends "base.html" %}
 
+
+
 <!-- the block content allows this to change dependent on the page -->
 {% block content %}
 <!-- this div has the content actually seen -->
-<div class="content">
-    <h1>Sunset Canteras Guide Book</h1>
-    <small>Andrew Ahn</small>
-    <p>Welcome to the Guidebook. Please feel free to read reviews. <br>Please <a href ="{{ url_for('register') }}">  register</a> to add your own review.
-    </p>
+<div class="content ">
 
+    <div class="col-sm-12 center-align">
+        <h2 class=" center-align"><strong><em>Welcome</em></strong></h2>
+        <h5 class=" center-align">
+            Welcome to the Sunset Canteras guidebook, a collaborative labouur of love celebrating Europe's largest urban
+            beach <br>
 
-    <img src="{{ url_for ('static', filename= 'images/Las-Canteras_0.jpg')}}" alt="Las Canteras beach">
-
+            Veritably, a little slice of paradise. <br>
+            Please feel free to read reviews.
+        </h5>
+    </div>
+    <div class="row center-align">
+        <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
+    </div>
+    <div class="col-sm-12">
     {% for review in reviews %}
     {{   review.place_name }}<br>
+    <img src="{{   review.img_url }}"><br>
     {{   review.category_name  }}<br>
     {{   review.visit_type  }}<br>
     {{   review.visit_date  }}<br>
@@ -22,7 +32,12 @@
     {{   review.created_by  }}<br>
 
 
-    {% endfor %}
-
+    {% endfor %}</div>
 </div>
+
+
+
+
+
+
 {% endblock %}
