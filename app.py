@@ -75,9 +75,11 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    review = list(mongo.db.reviews.find_one())
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, review=review)
 
     return redirect(url_for("login"))
 
@@ -101,6 +103,7 @@ def create_review():
         
         review = {
             "category_name": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
             "place_rating": request.form.get("place_rating"),
             "place_review": request.form.get("place_review"),
             "visit_date": request.form.get("visit_date"),
@@ -110,7 +113,7 @@ def create_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Successfully Added")
-        return redirect(url_for("go_home"))
+        return redirect(url_for("profile"))
 
     categories = mongo.db.category.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating")
@@ -123,10 +126,32 @@ def create_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    if request.method == "POST":
+        
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
+            "place_rating": request.form.get("place_rating"),
+            "place_review": request.form.get("place_review"),
+            "visit_date": request.form.get("visit_date"),
+            "visit_type": request.form.get("visit_type"),
+            "place_name": request.form.get("place_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Successfully Edited")
+
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     categories = mongo.db.category.find().sort("category_name", 1)
     return render_template(
         "edit_review.html", review=review, categories=categories)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("profile"))
 
 
 if __name__ == "__main__":
