@@ -146,8 +146,15 @@ nav ul li+li+li {
 }
 
 .content {
-  max-width: 1000px;
+  height: 100vh;
+	background: url('../images/Las-Canteras_0.jpg') no-repeat center center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	opacity: 0.9;
+  max-width: 100vw;
   margin: 50px auto;
+  align-items: center;
 }
 
 .content h1 {
@@ -212,7 +219,7 @@ form,
 }
 
 /* This affects the form part of the container, */
-form {
+.form-reg {
   width: 45%;
   background-color: #c4b10b;
 }
@@ -308,31 +315,25 @@ form div i {
 /* Reviews */
 .container-review{
   height: 100vh;
-  width: 80vw;
+  width:90vw;
   background-image: url(/static/images/sunset-canteras.jpg);
   background-size: cover;  
+  margin: auto;
+  position: relative;
 }
 
-.review-form{
-  width:60vw;
-  height:60vw;
-  
-  text-align: center;
-  background-color: #ffef104d;
+.container-review label{
+  color: #fafafa;
 }
-
-#place_review {
+.review-field {
   margin:auto;
-  width: 80%;
+  width: 40vw;
+  color: #080808;
 }
 
-#visit_date, #place_name{
-  width: 40%;
-}
-
-.profile-review-button, .edit-review-button, .delete-review-button{
+.profile-review-button, .review-button, .edit-review-button, .delete-review-button{
     padding: 10px 5px;
-    width: 20%;
+    width: 25%;
     gap: 15px;
     justify-content: center;
     align-items: center;
@@ -345,7 +346,11 @@ form div i {
     margin-left: 50px;
   }
 
-
+  .review-button{
+    color: white;
+    background-color: #2a998aa2;
+    margin: auto;
+  }
   .edit-review-button{
     background-color: #ffee10;
   }
