@@ -112,10 +112,13 @@ def create_review():
         flash("Review Successfully Added")
         return redirect(url_for("go_home"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    visits = mongo.db.visit_type.find().sort("type", 1)
+    categories = mongo.db.category.find().sort("category_name", 1)
+    ratings = mongo.db.rating.find().sort("rating")
+    visits = mongo.db.visit.find().sort("type", 1)
+    users = mongo.db.users.find().sort("username", 1)
     return render_template(
-        "create_review.html", categories=categories, visits=visits)
+        "create_review.html",
+        categories=categories, visits=visits, ratings=ratings, users=users)
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
