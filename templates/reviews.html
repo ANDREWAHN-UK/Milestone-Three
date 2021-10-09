@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>This is the Reviews page!</h2>
-{% for review in reviews %}
-{{   review.place  }}<br>
-{{   review.place_type  }}<br>
-{{   review.visit_type  }}<br>
-{{   review.rating  }}<br>
-{{   review.review  }}<br>
-{{   review.created_by  }}<br>
+<div class="col-sm-12">
+    {% for review in reviews %}
+   
 
+<h1>{{review.place_name}}</h1>
+  <small>Written by {{review.created_by}} on {{review.visit_date}}</small>
+  <hr>
+  <div>
+    {{review.place_review | safe}}
+    {% endfor %}</div>
+
+    
+  </div>
 
 {% endfor %}
 {% endblock  %}

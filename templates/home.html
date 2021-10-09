@@ -5,37 +5,43 @@
 <!-- the block content allows this to change dependent on the page -->
 {% block content %}
 <!-- this div has the content actually seen -->
-<div class="content ">
 
-    <div class="col-sm-12 center-align">
-        <h2 class=" center-align"><strong><em>Welcome</em></strong></h2>
-        <h5 class=" center-align">
-            Welcome to the Sunset Canteras guidebook, a collaborative labouur of love celebrating Europe's largest urban
-            beach <br>
+<div class="container-fluid">
 
-            Veritably, a little slice of paradise. <br>
-            Please feel free to read reviews.
-        </h5>
+    <div class="content ">
+
+        <div class="col-sm-12 center-align">
+            <h2 class=" center-align"><strong><em>Welcome</em></strong></h2>
+            <h5 class=" center-align">
+                Welcome to the Sunset Canteras guidebook, a collaborative labouur of love celebrating Europe's largest urban
+                beach <br>
+    
+                Veritably, a little slice of paradise. <br>
+                Please feel free to read reviews.
+            </h5>
+        </div>
+        <div class="row center-align">
+            <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
+        </div>
+    
+    
     </div>
-    <div class="row center-align">
-        <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
-    </div>
-
+    
+    <div class="col-sm-12">
+        {% for review in reviews %}
+       
+    
+    <h1>{{review.place_name}}</h1>
+      <small>Written by {{review.created_by}} on {{review.visit_date}}</small>
+      <div>
+        {{review.place_review | safe}}
+        {% endfor %}</div>
+    
+        <hr>
+      </div>
+    
 
 </div>
-<div class="col-sm-12">
-    {% for review in reviews %}
-    {{   review.place_name }}<br>
-    <img src="{{   review.img_url }}"><br>
-    {{   review.category_name  }}<br>
-    {{   review.visit_type  }}<br>
-    {{   review.visit_date  }}<br>
-    {{   review.place_rating  }}<br>
-    {{   review.place_review  }}<br>
-    {{   review.created_by  }}<br>
-
-
-    {% endfor %}</div>
 
 
 
