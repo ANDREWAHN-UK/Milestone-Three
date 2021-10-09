@@ -353,6 +353,7 @@ form div i {
   }
   .edit-review-button{
     background-color: #ffee10;
+    margin: auto;
   }
 
   .delete-review-button{
