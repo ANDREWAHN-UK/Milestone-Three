@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: white;
+  color: rgb(30, 18, 196);
   text-decoration: none;
   /* no underline */
 }
@@ -94,6 +94,9 @@ a {
   transform-origin: top left;
 }
 
+nav a{
+  color: white;
+}
 nav {
   position: fixed;
   bottom: 40px;
