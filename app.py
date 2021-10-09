@@ -24,6 +24,7 @@ def go_home():
     return render_template("home.html", reviews=reviews)
 
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
