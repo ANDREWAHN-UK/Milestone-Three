@@ -126,11 +126,12 @@ def create_review():
         categories=categories, visits=visits, ratings=ratings, )
 
 
-@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
-def edit_review(review_id):
+@app.route("/edit_review/<id>", methods=["GET", "POST"])
+def edit_review(id):
+
     if request.method == "POST":
         
-        submit = {
+        edits = {
             "category_name": request.form.get("category_name"),
             "image_url": request.form.get("image_url"),
             "place_rating": request.form.get("place_rating"),
@@ -140,28 +141,18 @@ def edit_review(review_id):
             "place_name": request.form.get("place_name"),
             "created_by": session["user"]
         }
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-        review = list(mongo.db.reviews.find_one())
-        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        
+        mongo.db.reviews.update({"_id": ObjectId(id)}, edits)
         flash("Review Successfully Edited")
-        return redirect(url_for("profile", username=username, review=review))
+        return redirect(url_for("profile", username=session["user"]))
 
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     categories = mongo.db.category.find().sort("category_name", 1)
+    ratings = mongo.db.rating.find().sort("rating", 1)
+    visits = mongo.db.visit.find().sort("type", 1)
+    review = mongo.db.reviews.find()
     return render_template(
-        "edit_review.html", review=review, categories=categories)
-
-
-@app.route("/delete_review/<review_id>")
-def delete_review(review_id):
-    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-    username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-    review = list(mongo.db.reviews.find_one())
-    
-    flash("Review Successfully Deleted")
-    return redirect(url_for("profile", username=username, review=review))
+        "edit_review.html", 
+        categories=categories, visits=visits, ratings=ratings, review=review)
 
 
 if __name__ == "__main__":
