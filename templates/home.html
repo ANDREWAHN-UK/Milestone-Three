@@ -20,7 +20,10 @@
     <div class="row center-align">
         <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
     </div>
-    <div class="col-sm-12">
+
+
+</div>
+<div class="col-sm-12">
     {% for review in reviews %}
     {{   review.place_name }}<br>
     <img src="{{   review.img_url }}"><br>
@@ -33,9 +36,6 @@
 
 
     {% endfor %}</div>
-</div>
-
-
 
 
 
