@@ -24,7 +24,6 @@ def go_home():
     return render_template("home.html", reviews=reviews)
 
 
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -76,11 +75,12 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    review = list(mongo.db.reviews.find_one())
-
+    review = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find().sort("place_rating")
+    
     if session["user"]:
         return render_template(
-            "profile.html", username=username, review=review)
+            "profile.html", username=username, review=review, reviews=reviews)
 
     return redirect(url_for("login"))
 
@@ -89,6 +89,11 @@ def profile(username):
 def about():
     return render_template("about.html")
 
+
+@app.route("/reviews")
+def reviews():
+    reviews = mongo.db.reviews.find().sort("visit_date")
+    return render_template("reviews.html", reviews=reviews)
 
 @app.route("/logout")
 def logout():
@@ -127,34 +132,16 @@ def create_review():
         categories=categories, visits=visits, ratings=ratings, )
 
 
-@app.route("/edit_review/<id>", methods=["GET", "POST"])
-def edit_review(id):
-
-    if request.method == "POST":
-        
-        edits = {
-            "category_name": request.form.get("category_name"),
-            "image_url": request.form.get("image_url"),
-            "place_rating": request.form.get("place_rating"),
-            "place_review": request.form.get("place_review"),
-            "visit_date": request.form.get("visit_date"),
-            "visit_type": request.form.get("visit_type"),
-            "place_name": request.form.get("place_name"),
-            "created_by": session["user"]
-        }
-        
-        mongo.db.reviews.update({"_id": ObjectId(id)}, edits)
-        flash("Review Successfully Edited")
-        return redirect(url_for("profile", username=session["user"]))
-
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    review = mongo.db.find_one({"_id": ObjectId(review_id)})
     categories = mongo.db.category.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating", 1)
     visits = mongo.db.visit.find().sort("type", 1)
-    review = mongo.db.reviews.find()
     return render_template(
-        "edit_review.html", 
-        categories=categories, visits=visits, ratings=ratings, review=review)
-
+        "edit_review.html", categories=categories,
+        visits=visits, ratings=ratings, review=review)
+ 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
