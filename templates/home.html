@@ -23,22 +23,32 @@
         <div class="row center-align">
             <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
         </div>
+
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="/static/images/canteras7.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras 3.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras4.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras5.jpeg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/Las-Canteras_0.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/sunset-canteras.jpg" alt=""></div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
     
     
     </div>
-    
-    <div class="col-sm-12">
-        {% for review in reviews %}
-       
-    
-    <h1>{{review.place_name}}</h1>
-      <small>Written by {{review.created_by}} on {{review.visit_date}}</small>
-      <div>
-        {{review.place_review | safe}}
-        {% endfor %}</div>
-    
-        <hr>
-      </div>
     
 
 </div>

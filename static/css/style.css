@@ -150,7 +150,7 @@ nav ul li+li+li {
 
 .content {
   height: 100vh;
-	background: url('../images/Las-Canteras_0.jpg') no-repeat center center;
+	background-color: rgba(177, 167, 154, 0.048);
 	background-size: cover;
 	overflow: hidden;
 	position: relative;
@@ -324,7 +324,14 @@ form div i {
   margin: auto;
   position: relative;
 }
-
+.view-review-container{
+  height: 100vh;
+  width:90vw;
+  background-image: url(/static/images/canteras4.jpg);
+  background-size: cover;  
+  margin: auto;
+  position: relative;
+}
 .container-review label{
   color: #fafafa;
 }
@@ -374,11 +381,17 @@ form div i {
 
 .container-profile{
   height: 100vh;
-  width: 80vw;
+  width: 90vw;
   background-image: url(/static/images/canteras7.jpg);
   background-size: cover; 
+  margin: auto;
+  position: relative;
 }
 
+.swiper {
+  width: 70vw;
+  height: 70vh;
+}
 /* MEDIA QUERIES */
 
 @media (max-width: 900px) {

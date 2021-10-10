@@ -1,19 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="col-sm-12">
-    {% for review in reviews %}
-   
+<div class="container-fluid view-review-container">
 
-<h1>{{review.place_name}}</h1>
-  <small>Written by {{review.created_by}} on {{review.visit_date}}</small>
-  <hr>
-  <div>
-    {{review.place_review | safe}}
-    {% endfor %}</div>
+  <div class="col-sm-12">
+    {% for review in reviews[:5] %}
 
+
+    <h1>Name: {{review.place_name}}</h1>
+    <small>Written by {{review.created_by| capitalize}} on {{review.visit_date}}</small>
+
+    <div>
+      Rating: {{review.place_rating}} out of ten <br>
+      Review: {{review.place_review | safe}}
+      <hr>
+      {% endfor %}
+    </div>
     
+
+
   </div>
 
-{% endfor %}
+  
+</div>
+
+
+
+
 {% endblock  %}
