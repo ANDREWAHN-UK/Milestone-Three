@@ -134,13 +134,32 @@ def create_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-    review = mongo.db.find_one({"_id": ObjectId(review_id)})
-    categories = mongo.db.category.find().sort("category_name", 1)
+
+    if request.method == "POST":
+        
+        review = {
+            "category_name": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
+            "place_rating": request.form.get("place_rating"),
+            "place_review": request.form.get("place_review"),
+            "visit_date": request.form.get("visit_date"),
+            "visit_type": request.form.get("visit_type"),
+            "place_name": request.form.get("place_name"),
+            "created_by": session["user"]
+        }
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("profile", username=username, review=review))
+        
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating", 1)
     visits = mongo.db.visit.find().sort("type", 1)
     return render_template(
-        "edit_review.html", categories=categories,
-        visits=visits, ratings=ratings, review=review)
+        "edit_review.html", review=review, 
+        categories=categories, visits=visits, ratings=ratings,)
  
 
 if __name__ == "__main__":
