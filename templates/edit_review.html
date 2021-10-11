@@ -6,11 +6,11 @@
     attached to the select and image and text-area. Otherwise, these elements will not be responsive-->
 
 <div class="container-fluid container-review  align-items-center">
-    <form method="POST" action="">
+    <form method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
         <!-- name of the place being reviewed -->
         <div class="mb-3 review-field">
             <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
-            <input id="place_name" name="place_name" minlength="5" maxlength="50" type="text" class="validate" required>
+            <input id="place_name" name="place_name" minlength="5" maxlength="50"  value="{{- review.place_name -}}"type="text" class="validate" required>
         </div>
 
         <!-- allows user to upload images -->
@@ -33,6 +33,9 @@
             <select id="place_rating" name="place_rating" class=" review-field validate" required>
                 <option value="">--Please choose a rating out of ten--</option>
                 {% for rating in ratings %}
+                {% if rating.rating == rating.rating%}
+                <option value="{{ rating.rating }}" selected> {{ rating.rating }}</option>
+                {% endif %}
                 <option value="{{ rating.rating }}">{{ rating.rating }}</option>
                 {% endfor %}
             </select>
@@ -43,7 +46,10 @@
             <select id="category_name" name="category_name" class=" review-field validate" required>
                 <option value="">--Please choose an option--</option>
                 {% for category in categories %}
+
+
                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+
                 {% endfor %}
             </select>
         </div>
@@ -54,6 +60,7 @@
                 <option value="">--Please choose an option (hold Control to select multiple options)--</option>
 
                 {% for visit in visits %}
+               
                 <option value="{{ visit.type }}">{{ visit.type }}</option>
                 {% endfor %}
             </select>
@@ -63,6 +70,7 @@
             <label for="place_review">Your review</label>
             <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
                 class="review-field validate" required>
+                {{- review.place_review -}}
             </textarea>
         </div>
 
