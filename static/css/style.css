@@ -94,13 +94,14 @@ a {
   transform-origin: top left;
 }
 
-nav a{
+nav a {
   color: white;
 }
+
 nav {
   position: fixed;
   bottom: 40px;
-  left: 0;
+  left: 20px;
   z-index: 100;
 }
 
@@ -150,11 +151,11 @@ nav ul li+li+li {
 
 .content {
   height: 100vh;
-	background-color: rgba(177, 167, 154, 0.048);
-	background-size: cover;
-	overflow: hidden;
-	position: relative;
-	opacity: 0.9;
+  background-color: rgba(177, 167, 154, 0.048);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.9;
   max-width: 100vw;
   margin: 50px auto;
   align-items: center;
@@ -309,86 +310,113 @@ form div i {
   text-shadow: 0 0 5px #ffee10;
 }
 
-.login-btn:hover{
+.login-btn:hover {
   color: #2a998a;
   box-shadow: 0 0 5px #2a998a;
   text-shadow: 0 0 5px #2a998a;
 }
 
 /* Reviews */
-.container-review{
+.container-review {
   height: 100vh;
-  width:90vw;
+  width: 90vw;
   background-image: url(/static/images/sunset-canteras.jpg);
-  background-size: cover;  
+  background-size: cover;
   margin: auto;
   position: relative;
 }
-.view-review-container{
+
+.view-review-container {
   height: 100vh;
-  width:90vw;
+  width: 90vw;
   background-image: url(/static/images/canteras4.jpg);
-  background-size: cover;  
+  background-size: cover;
   margin: auto;
   position: relative;
 }
-.container-review label{
+
+.container-review label {
   color: #fafafa;
 }
+
+/* this targets the input fields */
 .review-field {
-  margin:auto;
+  margin: auto;
   width: 40vw;
   color: #080808;
 }
 
-.review-paragraph{
+/* this affects how the box holding the reviews looks like */
+.review-paragraph {
   height: 50%;
-  width:50%;
+  width: 50%;
+  margin: auto;
   background-color: rgba(127, 255, 212, 0.24);
 }
-.profile-review-button, .review-button, .edit-review-button, .delete-review-button{
-    padding: 10px 5px;
-    width: 25%;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #0a0a0a;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #2a998a28;
-    color: rgb(10, 10, 10);
-    font-size: 20px;
-    margin-left: 50px;
-  }
 
-  .review-button{
-    color: white;
-    background-color: #2a998aa2;
-    margin: auto;
-  }
-  .edit-review-button{
-    background-color: #ffee10;
-    margin: auto;
-  }
+ /* this is the default styling for the various buttons */
+.profile-review-button,
+.review-button,
+.edit-review-button,
+.delete-review-button,
+.cancel-button {
+  padding: 10px 5px;
+  width: 25%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0a0a0a;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2a998a28;
+  color: rgb(10, 10, 10);
+  font-size: 20px;
+  margin-left: 50px;
+}
 
-  .delete-review-button{
-    background-color: rgba(187, 53, 60, 0.397);
-  }
+/* the following are changes to individual buttons. margin:auto is used to centre them */
+.review-button {
+  color: white;
+  background-color: #2a998aa2;
+  margin: auto;
+}
 
-  .review-button:hover{
-    color: #2a998a;
-    box-shadow: 0 0 5px #2a998a;
-    text-shadow: 0 0 5px #2a998a;
-  }
+.edit-review-button {
+  background-color: #ffee10;
+  margin: auto;
+}
+
+
+.delete-review-button {
+  background-color: rgba(187, 53, 60, 0.397);
+  margin: auto;
+}
+
+.cancel-button {
+  margin: auto;
+  background-color: burlywood;
+}
+
+/* this makes sure any hyperlinks display their text as desired, instead of the colour set at the start of this css file */
+.delete-review-button a,
+.cancel-button a {
+  color: white;
+}
+
+.review-button:hover {
+  color: #2a998a;
+  box-shadow: 0 0 5px #2a998a;
+  text-shadow: 0 0 5px #2a998a;
+}
 
 
 /* Profile */
 
-.container-profile{
+.container-profile {
   height: 100vh;
   width: 90vw;
   background-image: url(/static/images/canteras7.jpg);
-  background-size: cover; 
+  background-size: cover;
   margin: auto;
   position: relative;
 }
@@ -397,28 +425,36 @@ form div i {
   width: 70vw;
   height: 70vh;
 }
+
 /* MEDIA QUERIES */
 
 @media (max-width: 900px) {
-  .container-reg, .container-review {
+
+  .container-reg,
+  .container-review {
     flex-direction: column;
 
   }
 
-  form, .form-login,
-  .reg-content, .login-content {
+  form,
+  .form-login,
+  .reg-content,
+  .login-content {
     width: 100%;
     top: 5vh;
   }
 
-  .reg-btn, .login-btn {
+  .reg-btn,
+  .login-btn {
     flex-direction: column;
   }
 
 }
 
 @media (max-width: 425px) {
-  form, .form-login {
+
+  form,
+  .form-login {
     padding: 20px;
   }
 }
