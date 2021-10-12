@@ -81,6 +81,15 @@
                     <a href="{{ url_for('profile', username=session['user']) }}">
                         Cancel </strong>
             </button>
+            {% for category in categories %}
+    
+        {{ category.category_name }}
+        {% endfor %}
+    
+        {% for visit in visit %}
+    
+        {{ visit.type  }}
+        {% endfor %}
     
         </form>
     
