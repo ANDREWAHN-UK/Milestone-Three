@@ -150,8 +150,8 @@ def edit_review(review_id):
         }
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        mongo.db.reviews.insert_one(review)
-        flash("Review Successfully Added")
+        mongo.db.reviews.update({"_id": ObjectId(review_id)},review)
+        flash("Review Successfully Edited")
         return redirect(url_for("profile", username=username, review=review))
         
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
@@ -163,6 +163,16 @@ def edit_review(review_id):
         "edit_review.html", review=review,
         categories=categories, visits=visits, ratings=ratings,)
  
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return redirect(url_for("profile", username=username, review=review))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
