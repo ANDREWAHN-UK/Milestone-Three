@@ -341,6 +341,11 @@ form div i {
   color: #080808;
 }
 
+.review-paragraph{
+  height: 50%;
+  width:50%;
+  background-color: rgba(127, 255, 212, 0.24);
+}
 .profile-review-button, .review-button, .edit-review-button, .delete-review-button{
     padding: 10px 5px;
     width: 25%;
