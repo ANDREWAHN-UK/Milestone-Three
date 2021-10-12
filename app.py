@@ -95,6 +95,7 @@ def reviews():
     reviews = mongo.db.reviews.find().sort("visit_date")
     return render_template("reviews.html", reviews=reviews)
 
+
 @app.route("/logout")
 def logout():
     flash("Goodbye, thanks for visiting")
@@ -157,8 +158,9 @@ def edit_review(review_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating", 1)
     visits = mongo.db.visit.find().sort("type", 1)
+
     return render_template(
-        "edit_review.html", review=review, 
+        "edit_review.html", review=review,
         categories=categories, visits=visits, ratings=ratings,)
  
 
