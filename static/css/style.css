@@ -390,11 +390,16 @@ form div i {
 .delete-review-button {
   background-color: rgba(187, 53, 60, 0.397);
   margin: auto;
+  text-align: center;
 }
 
 .cancel-button {
   margin: auto;
-  background-color: burlywood;
+  background-color: rgba(222, 184, 135, 0.342);
+  text-align: center;
+  margin-top: -1rem;
+
+  /* margin top needs to be adjusted otherwise it sits down too low on edit_review.html */
 }
 
 /* this makes sure any hyperlinks display their text as desired, instead of the colour set at the start of this css file */
