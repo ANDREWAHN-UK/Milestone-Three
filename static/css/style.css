@@ -468,6 +468,71 @@ and so is proofed against whatever image the user uploads*/
   height: 70vh;
 }
 
+
+/* TEST PAGE */
+
+section.cms-boxes .cms-boxes-outer {
+  text-align: left;
+  margin-bottom: 6px;
+  padding: 0 3px;
+}
+section.cms-boxes .cms-boxes-outer .cms-boxes-items {
+  height: 350px;
+  display: table;
+  width: 100%;
+}
+section.cms-boxes .cms-boxes-outer .cms-boxes-items p {
+  color: rgb(10, 10, 10);
+}
+
+section.cms-boxes .boxes-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+section.cms-boxes .small-box, 
+section.cms-boxes .large-box {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+section.cms-boxes .cms-boxes-items h2 {
+  font-size: 35px;
+  color: rgb(15, 15, 15);
+  font-weight: 400;
+  line-height: 37px;
+  text-align: center;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+}
+
+section.cms-boxes .cms-features {
+  background: url(/static/images/canteras\ 3.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+section.cms-boxes .cms-security{
+  background: url(/static/images/canteras\ 1.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+section.cms-boxes .cms-scalability {
+  background: url(/static/images/canteras4.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+section.cms-boxes .cms-built {
+  background: url(/static/images/canteras5.jpeg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+section.cms-boxes .cms-documentation{
+  background: url(/static/images/sunset-canteras.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+
+section.cms-boxes .cms-boxes-items:hover {
+  opacity: .2;
+  cursor: pointer;
+}
 /* MEDIA QUERIES */
 
 @media (max-width: 900px) {
