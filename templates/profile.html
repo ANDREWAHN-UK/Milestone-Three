@@ -2,55 +2,60 @@
 {% block content %}
 <div class="container-fluid container-profile">
   <div class="row ">
-    <div class="col-md-5">
-      <img src="" alt="profile image for {{ username }}">
+    <h1>Your Profile Page</h1>
+    <div class="col-md-5 ">
+      <img class="user-image" src="{{user_image }}" alt="profile image for {{ username }}">
 
     </div>
     <div class="col-md-7">
-      <h1 class="center-align"> {{username| capitalize}}'s Profile</h1>
+      <h5> Your Biography</h5>
+
+      {{user_bio}}
+
     </div>
+  
   </div>
   <div class="row">
 
     <div class="col-md-12">
-    <p>Your reviews</p>
-    {% for review in reviews%}
-    {% if session.user == review.created_by %}
-    <div class="card bg-dark review-card">
+      <h5>Your reviews</h5>
+      {% for review in reviews%}
+      {% if session.user == review.created_by %}
+      <div class="card bg-dark review-card">
         <img class="card-img" src="{{review.image_url }} " alt="Card image">
         <div class="card-img-overlay">
-            <div class="review-box">
-                <h5 class="card-title "> <strong>You visited: {{ review.place_name }}</strong></h5>
-                
-                <p class="card-text"> and went there for {{review.visit_type}}<br>
-                </p>
-                <p class="card-text"> on {{review.visit_date}} <br>
-                </p>
-                <p class="card-text"> and rated it {{review.place_rating}} out of ten <br>
-                </p>
-                <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
-                </p>
-                
-                <div class="col-sm-12 ">
-                    <a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
-                    <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                        class="delete-review-button">Delete</a>
-                </div>
-                {% endif %}
+          <div class="review-box">
+            <h5 class="card-title "> <strong>You visited: {{ review.place_name }}</strong></h5>
+
+            <p class="card-text"> and went there for {{review.visit_type}}<br>
+            </p>
+            <p class="card-text"> on {{review.visit_date}} <br>
+            </p>
+            <p class="card-text"> and rated it {{review.place_rating}} out of ten <br>
+            </p>
+            <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
+            </p>
+
+            <div class="col-sm-12 ">
+              <a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
+              <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
             </div>
+            {% endif %}
+          </div>
 
         </div>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}</div>
 
 
   </div>
 
 
 
-  
 
 
- 
+
+
 </div>
 {% endblock %}

@@ -9,7 +9,7 @@
         <h1>Sunset Canteras</h1>
     </div>
 
-    <form  class="form-reg" method="POST" action="{{ url_for('register') }}">
+    <form class="form-reg" method="POST" action="{{ url_for('register') }}">
         <div>
             <div class="social">
 
@@ -20,7 +20,7 @@
 
                 </div>
 
-                <div class="reg-btn">   <a href="{{ url_for('login') }}" >Sign In</a> </div>
+                <div class="reg-btn"> <a href="{{ url_for('login') }}">Sign In</a> </div>
 
             </div>
 
@@ -31,17 +31,27 @@
                     <i class="fas fa-user-plus"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15" class="validate"
                         placeholder="Sunset lover" required>
-                    
+
+                </div>
+
+            </div>
+
+            <!-- allows user to upload images -->
+            <div class="row">
+                <div class="input-field col">
+                    <label for="image_url">Image(Please add url)</span></label>
+
+                    <input id="image_url" name="image_url" type="url" aria-describedby="image_url" required></input>
                 </div>
 
             </div>
             <!-- email -->
-            <div class ="row">
-            <div class="input-field col">
-                <label for="email">Email</label>
-                <i class="far fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="abc@gmail.com" />                
-            </div>               
+            <div class="row">
+                <div class="input-field col">
+                    <label for="email">Email</label>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="abc@gmail.com" />
+                </div>
             </div>
 
             <!-- password -->
@@ -50,11 +60,19 @@
                     <label for="password">Password</label>
                     <i class="fas fa-user-lock "></i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15" class="validate"
-                        required>                    
+                        required>
                 </div>
             </div>
-            <!-- register -->
             <div class="row">
+                <div class="input-field col">
+                    <label for="user_bio">Some words about yourself</label>
+                    <textarea id="user_bio" cols="50" rows="5" name="user_bio" minlength="5" maxlength="500"
+                        class="user-profile-text" required>
+                </textarea></div>
+
+            </div>
+            <!-- register -->
+            <div class=" row">
 
                 <button class="reg-btn" id="btn" type="submit">Register</button>
             </div>
