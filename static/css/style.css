@@ -317,6 +317,8 @@ form div i {
 }
 
 /* Reviews */
+
+/* this is for the create and edit review pages */
 .container-review {
   height: 100vh;
   width: 90vw;
@@ -326,6 +328,7 @@ form div i {
   position: relative;
 }
 
+/* this is for the all reviews page */
 .view-review-container {
   height: 100vh;
   width: 90vw;
@@ -333,6 +336,7 @@ form div i {
   background-size: cover;
   margin: auto;
   position: relative;
+  text-align: center;
 }
 
 .container-review label {
@@ -346,15 +350,34 @@ form div i {
   color: #080808;
 }
 
-/* this affects how the box holding the reviews looks like */
-.review-paragraph {
-  height: 50%;
-  width: 50%;
+/* this affects the card holding the reviews, visible on profile and all reviews page */
+.review-card {
+  color: white;
+  text-align: center;
+  width: 80vw;
+  height: 20vh;
   margin: auto;
-  background-color: rgba(127, 255, 212, 0.24);
+  
 }
 
- /* this is the default styling for the various buttons */
+/* this sets the behaviours for the images that appear, which are uploaded by the user */
+.review-card img{
+  max-width: 100vw;
+  max-height: 40vh;
+}
+
+/* this affects the parts of the card that holds the review 
+the background colus value acta as a filter, so that the white 
+text is always displayed against a grey backgfropund, 
+and so is proofed against whatever image the user uploads*/
+.review-box{
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  background-color: rgba(80, 76, 70, 0.322);
+}
+
+/* this is the default styling for the various buttons */
 .profile-review-button,
 .review-button,
 .edit-review-button,
@@ -385,7 +408,6 @@ form div i {
   background-color: #ffee10;
   margin: auto;
 }
-
 
 .delete-review-button {
   background-color: rgba(187, 53, 60, 0.397);
@@ -424,6 +446,7 @@ form div i {
   background-size: cover;
   margin: auto;
   position: relative;
+  text-align: center;
 }
 
 .swiper {
