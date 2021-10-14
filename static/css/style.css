@@ -451,7 +451,7 @@ and so is proofed against whatever image the user uploads*/
 .container-profile {
   height: 100vh;
   width: 90vw;
-  background: #284b6b6e;
+  background-image: url(/static/images/sunset-las-canteras-beach-las-palmas.jpg);
   background-size: cover;
   margin: auto;
   position: relative;
@@ -459,8 +459,8 @@ and so is proofed against whatever image the user uploads*/
 }
 
 .user-image{
-  max-height: 70%;
-  max-width: 70%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .swiper {
@@ -471,7 +471,8 @@ and so is proofed against whatever image the user uploads*/
 /* MEDIA QUERIES */
 
 @media (max-width: 900px) {
-
+  /* the next 3 entries makes the 2 halves of the registration and
+   login farms stack ontop of each other */
   .container-reg,
   .container-review {
     flex-direction: column;
@@ -489,6 +490,11 @@ and so is proofed against whatever image the user uploads*/
   .reg-btn,
   .login-btn {
     flex-direction: column;
+  }
+
+  /* makes the images that appear at the top of the reviews disappear */
+  .card-img{
+    display: none;
   }
 
 }
