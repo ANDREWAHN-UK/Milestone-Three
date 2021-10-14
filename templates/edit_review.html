@@ -1,106 +1,106 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Note that .review-field is needed not only in the class -mb-3(which acts as colums) but also in the classes 
-    attached to the select and image and text-area. Otherwise, these elements will not be responsive-->
 
-    <div class="container-fluid container-review  align-items-center">
+<div class="container-fluid container-review align-items-center">
+    <!-- Various values pre-placed, linked to what the database holds, so users can see what was written before -->
+    <form action="{{ url_for('edit_review', review_id=review._id) }}" method="post">
 
-        <form method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
-            <!-- name of the place being reviewed -->
-            <div class="mb-3 review-field">
-                <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
-                <input id="place_name" name="place_name" minlength="5" maxlength="50" value="{{ review.place_name }}"
-                    type="text" class="validate" required>
-            </div>
-    
-            <!-- allows user to upload images -->
-            <div class="mb-3 review-field">
-                <label for="image_url">Image(Please add url)</span></label>
-    
-                <input id="image_url" name="image_url" type="url" aria-describedby="image_url"
-                    class="review-field validate"></input>
-            </div>
-    
-            <!-- allows user to select the visit date -->
-            <div class="mb-3 review-field">
-                <label for="visit_date"> Visit date:</label>
-    
-                <input type="date" id="visit_date" value="{{ review.visit_date }}" name="visit_date"
-                    min="2016-01-01" max="2022-12-31">
-            </div>
-            <!-- Allows the user to select a rating. This rating choice is pulled from the database -->
-            <div class="mb-3 review-field">
-                <label for="place_rating">Your Rating</label>
-                <select id="place_rating" name="place_rating" class="review-field validate" required>
-                    <option value="">--Please choose a rating out of ten--</option>
-                    {% for rating in ratings %}
-                    <option value="{{ rating.rating }}">{{ rating.rating }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <!-- Allows the user to select a category. This valuie comes from the database -->
-            <div class="mb-3 review-field">
-                <label for="category_name">Type of Place</label>
-                <select id="category_name" name="category_name" class="review-field validate">
-                    <option value="">--Please choose an option--</option>
-    
-                    {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <!-- Allows user to select the reason for their visit. The values here are taken from the database -->
-            <div class="mb-3 review-field">
-                <label for="visit_type">Purpose of visit</label>
-                <select id="visit_type" value="1" multiple name="visit_type" class="review-field validate" required>
-                    <option value="">--Please choose an option (hold Control to select multiple options)--</option>
-    
-                    {% for visit in visits %}
-                    <option value="{{ visit.type }}">{{ visit.type }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <!-- Allows users to write a few words. The length can be adjusted if need be -->
-            <div class="mb-3 review-field">
-                <label for="place_review">Your review</label>
-                <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
-               class="review-field validate" required> {{- review.place_review -}}
-                </textarea>
-            </div>
-            
-    
-            <button type="submit" class=" review-button "><strong>Edit
-                    Review</strong>
-            </button>
-            <button type="submit" class="delete-review-button "><strong>
-                <a href="{{ url_for('delete_review', review_id=review._id) }}">
-                    Delete Review </strong>
-            </button>
-            <button type="submit" class="cancel-button "><strong>
-                    <a href="{{ url_for('profile', username=session['user']) }}">
-                        Cancel </strong>
-            </button>
-            {% for category in categories %}
-    
-        {{ category.category_name }}
-        {% endfor %}
-    
-        {% for visit in visit %}
-    
-        {{ visit.type  }}
-        {% endfor %}
-    
-        </form>
-    
-        {% for category in categories %}
-    
-        {{ category.category_name }}
-        {% endfor %}
-    
-        {% for visit in visit %}
-    
-        {{ visit.type  }}
-        {% endfor %}
-    
-{% endblock %}
+        <!-- name of the place being reviewed -->
+        <div class="mb-3 review-field">
+            <label for="place_name">Place Name</label> <i class="fas fa-pencil-alt"></i>
+            <input id="place_name" name="place_name" minlength="5" maxlength="50" value="{{ review.place_name }}"
+                type="text" class="validate" required>
+        </div>
+
+        <!-- allows user to upload images -->
+        <div class="mb-3 review-field">
+            <label for="image_url">Image(Please add url)</span></label>
+
+            <input id="image_url" name="image_url" type="url" aria-describedby="image_url"
+                class="review-field validate"></input>
+        </div>
+
+        <!-- allows user to select the visit date -->
+        <div class="mb-3 review-field">
+            <label for="visit_date"> Visit date:</label>
+
+            <input type="date" id="visit_date" value="{{ review.visit_date }}" name="visit_date" min="2016-01-01"
+                max="2022-12-31">
+        </div>
+
+        <!-- Allows the user to select a rating. This rating choice is pulled from the database -->
+        <div class="mb-3 review-field">
+            <label for="place_rating">Your Rating</label>
+            <select id="place_rating" name="place_rating" class="review-field validate" required>
+                <option value="">--Please choose a rating out of ten--</option>
+                {% for rating in ratings %}
+                {% if rating.rating == review.place_rating %}
+                <option value="{{ rating.rating }}" selected>{{ rating.rating }}</option>
+                {% else%}
+                <option value="{{ rating.rating }}">{{ rating.rating }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <!-- Allows the user to select a category. This value comes from the database -->
+        <div class="mb-3 review-field">
+
+
+            <label for="category_name">Type of Place</label>
+            <select name="category_name" id="category_name" class="review-field validate">
+                <option value="">--Please choose an option--</option>
+
+                {% for category in categories%}
+                {% if category.category_name == review.category_name %}
+                <option value="{{ category.category_name}}" selected>{{ category.category_name}}</option>
+                {% else%}
+                <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Allows user to select the reason for their visit. The values here are taken from the database -->
+        <div class="mb-3 review-field">
+            <label for="visit_type">Purpose of visit</label>
+            <select id="visit_type" value="1" multiple name="visit_type" class="review-field validate" required>
+                <option value="">--Please choose an option (hold Control to select multiple options)--</option>
+
+                {% for visit in visits %}
+
+                {% if visit.type == review.visit_type %}
+                <option value="{{ visit.type }}" selected>{{ visit.type }}</option>
+                {% else %}
+                <option value="{{ visit.type }}">{{ visit.type }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Allows users to write a few words. The length can be adjusted if need be -->
+        <div class="mb-3 review-field">
+            <label for="place_review">Your review</label>
+            <textarea id="place_review" cols="75" rows="5" name="place_review" minlength="5" maxlength="500"
+                class="review-field validate" required> {{- review.place_review -}}
+            </textarea>
+        </div>
+
+
+        <button type="submit" class=" review-button "><strong>Edit
+                Review</strong>
+        </button>
+        <div class="mb-3 delete-review-button"> 
+            <a href="{{ url_for('delete_review', review_id=review._id) }}">
+                <strong>Delete</strong></a>
+        </div>
+        <div class="mb-3 cancel-button"> 
+            <a href="{{ url_for('delete_review', review_id=review._id) }}">
+                <strong>Cancel</strong></a>
+        </div>
+    </form>
+</div>
+
+{% endblock  %}
