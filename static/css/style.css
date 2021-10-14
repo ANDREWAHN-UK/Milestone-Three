@@ -363,27 +363,27 @@ form div i {
 .review-card {
   color: white;
   text-align: center;
-  width: 80vw;
-  height: 20vh;
-  margin: auto;
-  
+  width:80vw;
+  height: 30vw;
+  margin: auto;  
 }
 
 /* this sets the behaviours for the images that appear, which are uploaded by the user */
-.review-card img{
+.card-img{
   max-width: 100vw;
-  max-height: 40vh;
+  max-height: 35vh;
 }
 
 /* this affects the parts of the card that holds the review 
-the background colus value acta as a filter, so that the white 
-text is always displayed against a grey backgfropund, 
+the background colour value acts as a filter, so that the white 
+text is always displayed against a grey background, 
 and so is proofed against whatever image the user uploads*/
 .review-box{
-  height: 100%;
-  width: 50%;
+  height: 80%;
+  width: 80%;
   margin: auto;
   background-color: rgba(80, 76, 70, 0.322);
+  overflow: hidden;
 }
 
 /* this is the default styling for the various buttons */
@@ -451,7 +451,7 @@ and so is proofed against whatever image the user uploads*/
 .container-profile {
   height: 100vh;
   width: 90vw;
-  background-image: url(/static/images/canteras7.jpg);
+  background: #284b6b6e;
   background-size: cover;
   margin: auto;
   position: relative;
