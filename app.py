@@ -35,9 +35,13 @@ def register():
             flash("This username already exists, please choose another")
             return redirect(url_for("register"))
 
+        # the ""on the left is what gets put into the database, 
+        # the ("") on the right is what gets taken from the form
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "image_url": request.form.get("image_url"),
+            "user_bio": request.form.get("user_bio")
         }
         mongo.db.users.insert_one(register)
         
@@ -76,11 +80,17 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     review = mongo.db.reviews.find()
+    user_image = mongo.db.users.find_one(
+        {"username": session["user"]})["image_url"]
     reviews = mongo.db.reviews.find().sort("place_rating")
+    user_bio = mongo.db.users.find_one(
+        {"username": session["user"]})["user_bio"]
     
     if session["user"]:
         return render_template(
-            "profile.html", username=username, review=review, reviews=reviews)
+            "profile.html", username=username,
+            review=review, reviews=reviews,
+            user_image=user_image, user_bio=user_bio)
 
     return redirect(url_for("login"))
 
