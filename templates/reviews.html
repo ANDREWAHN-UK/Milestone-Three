@@ -1,35 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="view-review-container"> 
-    {% for review in reviews%}
-    <div class="card bg-dark ">
-        <img class="card-img" src="{{review.image_url }} " alt="Card image">
-        <div class="card-img-overlay review-card">
-            <div class="review-box">
-                <h5 class="card-title "> <strong>Place visited: {{ review.place_name }}</strong></h5>
-                <p class="card-text"> Written by {{review.created_by| capitalize}} <br>
-                </p>
-                <p class="card-text"> who went there for {{review.visit_type}}<br>
-                </p>
-                <p class="card-text"> on {{review.visit_date}} <br>
-                </p>
-                <p class="card-text"> and rated it {{review.place_rating}} out of ten <br>
-                </p>
-                <p class="card-text "> {{review.created_by| capitalize}}'s thoughts: <br> {{review.place_review | safe}}
-                </p>
+<div class="view-review-container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
+                Review</a>
+            <h5>All reviews</h5>
+            {% for review in reviews %}
+            <div class="accordion " id="accordionExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            {{ review.place_name }} rated by {{ review.created_by }}
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img class="card-img" src="{{review.image_url }} " alt="Card image">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <strong>You visited: {{ review.place_name }}</strong></h5>
+
+                                <p class="card-text"> and went there for {{review.visit_type}}<br>
+                                </p>
+                                <p class="card-text"> on {{review.visit_date}} <br>
+                                </p>
+                                <p class="card-text"> and rated it {{review.place_rating}} out of ten <br>
+                                </p>
+                                <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
+
+                                    {% if session.user == review.created_by %}
+                                </p><a href="{{ url_for('edit_review', review_id=review._id) }}"
+                                    class="edit-review-button">Edit</a>
+                                <a href="{{ url_for('delete_review', review_id=review._id) }}"
+                                    class="delete-review-button">Delete</a></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
 
             </div>
-{% if session.user == review.created_by %}
-        <div class="col-sm-12 ">
-            <a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
-            <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
-        </div>
-        {% endif %}
+
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 </div>
-
-
 
 {% endblock  %}
