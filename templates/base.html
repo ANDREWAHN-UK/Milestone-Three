@@ -52,10 +52,11 @@
     <!-- the below are the navbar links -->
     <nav>
         <ul>
+
             <li><a href="{{ url_for('go_home') }}"><i class="fas fa-home"></i> Home</li>
             <li><a href="{{ url_for('reviews') }}"><i class="far fa-eye"></i> View Reviews</li>
             <li><a href="{{ url_for('about') }}"><i class="fas fa-envelope-square"></i> About</li>
-
+            <li><a href="{{ url_for('test') }}"><i class="fas fa-envelope-square"></i> Test</li>
             {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-users"></i>Profile</a>
             </li>
@@ -70,7 +71,7 @@
 
         </ul>
     </nav>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
     </script>
