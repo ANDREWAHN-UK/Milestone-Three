@@ -150,12 +150,12 @@ def edit_review(review_id):
         }
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        mongo.db.reviews.update({"_id": ObjectId(review_id)},review)
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, review)
         flash("Review Successfully Edited")
         return redirect(url_for("profile", username=username, review=review))
         
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = mongo.db.category.find().sort("category_name", 1)
     ratings = mongo.db.rating.find().sort("rating", 1)
     visits = mongo.db.visit.find().sort("type", 1)
 
