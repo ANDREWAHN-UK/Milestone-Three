@@ -192,13 +192,16 @@ form,
 .login-content {
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 80vh;
   top: 10vh;
   padding: 50px;
   position: relative;
   margin: auto;
+  margin-bottom: 0;
 
 }
+
+
 
 /* this is the left half of the form */
 .reg-content,
@@ -290,7 +293,13 @@ form div input {
 form div {
   position: relative;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+/* this targets the text field where users enter information about themselves.
+ It needs to be width:% and not vw */
+.user-profile-text{
+  width: 100%;
 }
 
 /* highlights the area where a user is typing */
@@ -346,7 +355,7 @@ form div i {
 /* this targets the input fields */
 .review-field {
   margin: auto;
-  width: 40vw;
+  width: 35vw;
   color: #080808;
 }
 
@@ -449,6 +458,11 @@ and so is proofed against whatever image the user uploads*/
   text-align: center;
 }
 
+.user-image{
+  max-height: 70%;
+  max-width: 70%;
+}
+
 .swiper {
   width: 70vw;
   height: 70vh;
@@ -464,7 +478,7 @@ and so is proofed against whatever image the user uploads*/
 
   }
 
-  form,
+  .form-reg,
   .form-login,
   .reg-content,
   .login-content {
