@@ -95,16 +95,6 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-
-@app.route("/test")
-def test():
-    return render_template("test.html")
-
-
 @app.route("/reviews")
 def reviews():
     reviews = mongo.db.reviews.find().sort("visit_date")
