@@ -1,57 +1,102 @@
 {% extends "base.html" %}
-
-
-
-<!-- the block content allows this to change dependent on the page -->
 {% block content %}
-<!-- this div has the content actually seen -->
 
+
+
+<!-- I'm naming this homepageContent so I don't confuse it with the content from the profile -->
 <div class="container-fluid">
-
-    <div class="content ">
-
-        <div class="col-sm-12 center-align">
-            <h2 class=" center-align"><strong><em>Welcome</em></strong></h2>
-            <h5 class=" center-align">
-                Welcome to the Sunset Canteras guidebook, a collaborative labouur of love celebrating Europe's largest
-                urban
-                beach <br>
-
-                Veritably, a little slice of paradise. <br>
-                Please feel free to read reviews.
-            </h5>
-        </div>
-        <div class="row center-align">
-            <a href="{{ url_for('register') }}" class="btn btn-flat white-text">Join Us</a>
+  <section class="homepageContent">
+    <div class="row">
+      <div class="col-md-12 col-sm-6">
+        <div class="homepageBox titleBox">
+          <div class="inner">
+            <div class="image">
+              <i class="fa fa-tachometer" aria-hidden="true"></i>
+            </div>
+            <h3>Sunset Canteras </h3>
+            <h5>Thisguide is intended as a living, breathing guide to this wonderful beach and city</h5>
+          </div>
         </div>
 
-        
- <div class="swiper">
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4 col-sm-6">
+
+        <a href="{{ url_for('register') }}">
+          <div class="homepageBox boxOne">
+            <div class="inner">
+              <div class="image">
+                <i class="fas fa-user"></i>
+              </div>
+              <h4>Get started</h4>
+              <p>Login or Register here.</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="{{ url_for('reviews') }}">
+          <div class="homepageBox boxTwo">
+            <div class="inner">
+              <div class="image">
+                
+                <i class="far fa-eye"></i> 
+              </div>
+              <h4>Reviews</h4>
+              <p>View all the reviews here</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="col-md-4 col-sm-6">
+        <a href="https://www.airbnb.co.uk/rooms/18222301?source_impression_id=p3_1634314778_gEIoDPuQMkNyC9OA&guests=1&adults=1">
+          <div class="homepageBox boxThree">
+            <div class="inner">
+              <div class="image">
+                <i class="fas fa-envelope-square"></i>
+              </div>
+              <h4>Sunset Canteras</h4>
+              <p>Read about this amazing apartment here</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-6">
+        <div class="swiper">
             
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><img src="/static/images/canteras7.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/static/images/canteras 3.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/static/images/canteras4.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/static/images/canteras5.jpeg" alt=""></div>
-        <div class="swiper-slide"><img src="/static/images/Las-Canteras_0.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/static/images/sunset-canteras.jpg" alt=""></div>
-        ...
-    </div>
-             
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-</div>
-       
-
-
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="/static/images/canteras7.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras 3.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras4.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/canteras5.jpeg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/Las-Canteras_0.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="/static/images/sunset-canteras.jpg" alt=""></div>
+              ...
+          </div>
+                   
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        
+      </div>
+      </div>
     </div>
 
+    
 
+    
+  </section>
 </div>
-
-
-
 
 {% endblock %}
