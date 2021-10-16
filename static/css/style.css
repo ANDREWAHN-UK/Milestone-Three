@@ -632,7 +632,7 @@ and so is proofed against whatever image the user uploads*/
 
 /* on mobile screens, navbar needs heavy adjustments */
   nav {
-    position: fixed;
+    position: absolute;
     bottom: 10vh;
     left: 2vw;
     z-index: 0;
