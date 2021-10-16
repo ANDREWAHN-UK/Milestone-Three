@@ -527,7 +527,6 @@ and so is proofed against whatever image the user uploads*/
   .boxOne,
   .boxTwo,
   .boxThree {
-    padding: 20px 55px;
     width: 100%;
     min-height: 200px;
   }
@@ -635,14 +634,6 @@ and so is proofed against whatever image the user uploads*/
     padding-left: 80px;
   }
 
-  .homepageBox,
-  .titleBox,
-  .boxOne,
-  .boxTwo,
-  .boxThree {
-    width: 100%;
-    min-height: 200px;
-  }
 }
 
 @media screen and (max-width: 600px) {
