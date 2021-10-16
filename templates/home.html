@@ -4,15 +4,16 @@
 
 
 <!-- I'm naming this homepageContent so I don't confuse it with the content from the profile -->
-<div class="container-fluid">
+
   <section class="homepageContent">
     <div class="row">
       <div class="col-md-12 col-sm-6">
         <div class="homepageBox titleBox">
           <div class="inner">
-           
+
             <h3>Sunset Canteras </h3>
-            <p> Sunset Canteras is the name of a highly succesful and popular holiday rental, situated exactly in the middle of the world famous Las Canteras beach</p>
+            <p> Sunset Canteras is the name of a highly succesful and popular holiday rental, situated exactly in the
+              middle of the world famous Las Canteras beach</p>
             <br>
             <p>This guide builds upon that and is intended to highlight the best parts of the beach</p>
           </div>
@@ -28,9 +29,7 @@
         <a href="{{ url_for('register') }}">
           <div class="homepageBox boxOne">
             <div class="inner">
-              <div class="image">
-                <i class="fas fa-user"></i>
-              </div>
+              <i class="fas fa-user"></i>
               <h4>Get started</h4>
               <p>Login or Register here.</p>
             </div>
@@ -43,10 +42,7 @@
         <a href="{{ url_for('reviews') }}">
           <div class="homepageBox boxTwo">
             <div class="inner">
-              <div class="image">
-                
-                <i class="far fa-eye"></i> 
-              </div>
+              <i class="far fa-eye"></i>
               <h4>Reviews</h4>
               <p>View all the reviews here</p>
             </div>
@@ -56,12 +52,11 @@
 
 
       <div class="col-md-4 col-sm-6">
-        <a href="https://www.airbnb.co.uk/rooms/18222301?source_impression_id=p3_1634314778_gEIoDPuQMkNyC9OA&guests=1&adults=1">
+        <a
+          href="https://www.airbnb.co.uk/rooms/18222301?source_impression_id=p3_1634314778_gEIoDPuQMkNyC9OA&guests=1&adults=1">
           <div class="homepageBox boxThree">
             <div class="inner">
-              <div class="image">
-                <i class="fas fa-envelope-square"></i>
-              </div>
+              <i class="fas fa-envelope-square"></i>
               <h4>Sunset Canteras</h4>
               <p>Read about this amazing apartment here</p>
             </div>
@@ -74,29 +69,33 @@
     <div class="row">
       <div class="col-md-12 col-sm-6">
         <div class="swiper">
-            
+
           <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="/static/images/canteras7.jpg" alt=""></div>
-              <div class="swiper-slide"><img src="/static/images/canteras 3.jpg" alt=""></div>
-              <div class="swiper-slide"><img src="/static/images/canteras4.jpg" alt=""></div>
-              <div class="swiper-slide"><img src="/static/images/canteras5.jpeg" alt=""></div>
-              <div class="swiper-slide"><img src="/static/images/Las-Canteras_0.jpg" alt=""></div>
-              <div class="swiper-slide"><img src="/static/images/sunset-canteras.jpg" alt=""></div>
-              ...
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="/static/images/Las-Canteras_0.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/canteras 3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/canteras4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/lc-beach.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/canteras5.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/sunset-las-canteras-beach-las-palmas.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/canteras7.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/lc-boats.webp" alt=""></div>
+            <div class="swiper-slide"><img src="/static/images/sunset-canteras.jpg" alt=""></div>
+            
+            ...
           </div>
-                   
+
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-        
-      </div>
+
+        </div>
       </div>
     </div>
 
-    
 
-    
+
+
   </section>
-</div>
+
 
 {% endblock %}
