@@ -18,8 +18,6 @@ a {
   /* no underline */
 }
 
-
-
 /* BASE.HTML */
 .container-base {
   background-color: #fafafa;
@@ -29,7 +27,6 @@ a {
   min-height: 100vh;
   padding: 50px;
 }
-
 
 .flashes {
   text-align: center;
@@ -51,7 +48,6 @@ a {
   transform: rotate(-70deg);
 }
 
-
 .circle-container {
   position: fixed;
   top: -100px;
@@ -61,8 +57,8 @@ a {
 
 .circle {
   background-color: #2a998a;
-  height: 200px;
-  width: 200px;
+  height: 15rem;
+  width: 15rem;
   border-radius: 50%;
   position: relative;
   transition: transform 0.5s linear;
@@ -100,9 +96,9 @@ nav a {
 
 nav {
   position: fixed;
-  bottom: 40px;
-  left: 20px;
-  z-index: 100;
+  bottom: 5rem;
+  left: 2rem;
+  z-index: -5;
 }
 
 nav ul {
@@ -634,6 +630,21 @@ and so is proofed against whatever image the user uploads*/
     padding-left: 80px;
   }
 
+/* on mobile screens, navbar needs heavy adjustments */
+  nav {
+    position: fixed;
+    bottom: 10vh;
+    left: 2vw;
+    z-index: 0;
+  }
+nav ul li i {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  nav p{
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -642,10 +653,7 @@ and so is proofed against whatever image the user uploads*/
     padding-left: 40px;
   }
 
-  nav ul li i, nav ul li p {
-    font-size: 20px;
-    margin-right: 10px;
-  }
+  
 }
 
 @media screen and (max-width: 480px) {
