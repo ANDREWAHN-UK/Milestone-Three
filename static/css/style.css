@@ -202,12 +202,13 @@ nav ul li+li+li {
   height: 4vh;
   width: 4vw;
 }
+
+
+/* individual boxes */
 .titleBox{
   background:rgba(82, 69, 53, 0.24) ;
   color: #fafafa;
 }
-
-/* boxNumber is to personalise individual boxes */
 .boxOne{
   background:rgba(55, 117, 114, 0.521);  
 }
@@ -495,7 +496,6 @@ and so is proofed against whatever image the user uploads*/
   background-color: rgba(222, 184, 135, 0.342);
   text-align: center;
   margin-top: -1rem;
-
   /* margin top needs to be adjusted otherwise it sits down too low on edit_review.html */
 }
 
@@ -534,8 +534,10 @@ and so is proofed against whatever image the user uploads*/
 
 /* the breakpoints here are based on bootstrap, and target various pages differenttly, i.e at various breakpoints */
 @media screen and (max-width: 991px) {
-  .homepageBox {
+  .homepageBox, .titleBox,.boxOne, .boxTwo, .boxThree  {
     padding: 20px 55px;
+    width: 100%;
+    min-height: 200px;
   }
 
   
@@ -546,6 +548,25 @@ and so is proofed against whatever image the user uploads*/
  /* removed the calc as  that was disturbing the responsiveness
  and changed the height and width to % */
 }
+
+.review-card {
+  color: white;
+  text-align: center;
+  width:80%;
+  height: 30%;
+  margin: auto;  
+}
+
+.view-review-container{
+  width:90%;
+  height: 120%;
+}
+
+nav p{
+  display: none;
+}
+
+
 }
 
 @media (max-width: 900px) {
@@ -582,7 +603,7 @@ and so is proofed against whatever image the user uploads*/
     padding-right: 80px;
     padding-left: 80px;
   }
-  .homepageBox {
+  .homepageBox.titleBox,.boxOne, .boxTwo, .boxThree  {
     width: 100%;
     min-height: 200px;
   }
@@ -606,4 +627,4 @@ and so is proofed against whatever image the user uploads*/
   .form-login {
     padding: 20px;
   }
-}
+}}
