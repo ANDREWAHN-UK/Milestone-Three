@@ -238,8 +238,7 @@ this affects the whole container */
 /* this affects the container. 
 Position: relative +
 margin: auto centre the form and keep it responsive */
-.reg-content,
-form,
+.reg-content, form,
 .login-content {
   display: flex;
   flex-direction: column;
@@ -404,17 +403,20 @@ form div i {
 /* this targets the input fields */
 .review-field {
   margin: auto;
-  width: 35vw;
+  width: 35%;
+  min-width: 35vw;
   color: #080808;
 }
 
-/* this affects the card holding the reviews, visible on profile and all reviews page */
-.review-card {
-  color: white;
-  text-align: center;
-  width: 80vw;
-  height: 30vw;
+.accordion{
+  width: 50%;
   margin: auto;
+  
+}
+
+.accordion-item, .accordion-button{
+  background-color: rgba(0, 0, 0, 0.158);
+  color: #fafafa;
 }
 
 /* this sets the behaviours for the images that appear, which are uploaded by the user */
@@ -512,6 +514,31 @@ and so is proofed against whatever image the user uploads*/
   max-width: 100%;
 }
 
+.search-container {
+  padding: 10px 5px;
+  width: 25%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0a0a0a;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2a998a28;
+  color: rgb(10, 10, 10);
+  font-size: 20px;
+  margin-left: 50px;
+  margin: auto;
+}
+
+.search-container .input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  
+}
+
 /* MEDIA QUERIES */
 
 
@@ -535,7 +562,7 @@ and so is proofed against whatever image the user uploads*/
   .review-button,
   .edit-review-button,
   .delete-review-button,
-  .cancel-button {
+  .cancel-button, .search-container {
     width: 100%;
     padding: 5px;
   }

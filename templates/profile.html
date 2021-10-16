@@ -3,11 +3,11 @@
 <div class="container-profile">
   <div class="row ">
     <h1>Your Profile Page</h1>
-    <div class="col-md-5 ">
+    <div class="col-md-4 ">
       <img class="user-image" src="{{user_image }}" alt="profile image for {{ username }}">
 
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
       <h5> Your Biography</h5>
 
       {{user_bio}}
@@ -15,11 +15,24 @@
     </div>
 
   </div>
+       
+ 
+
   <div class="row">
     <div class="col-md-12">
 
       <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
         Review</a>
+
+        <div class="search-container">
+          
+          <div class="inputs">            
+            <label for="search">Search Box</label>
+            <input id="search" name="search" type="text" placeholder="Search Box" />
+            <button type="submit">Search</button>
+          </div>
+          
+        </div>
       <h5>Your reviews</h5>
       {% for review in reviews %}
       {% if session.user == review.created_by %}
