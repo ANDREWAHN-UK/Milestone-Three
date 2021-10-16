@@ -125,21 +125,7 @@ nav ul li i {
   margin-right: 10px;
 }
 
-/* this line makes the 2nd li item apear on a diagonal gradient  */
-nav ul li+li {
-  margin-left: 15px;
-  transform: translateX(-150%);
-}
 
-/* this line makes the 3rd li item apear on a diagonal gradient */
-nav ul li+li+li {
-  margin-left: 30px;
-  transform: translateX(-200%);
-}
-nav ul li+li+li+li {
-  margin-left: 45px;
-  transform: translateX(-250%);
-}
 
 /* HOME PAGE */
 
@@ -147,8 +133,6 @@ nav ul li+li+li+li {
 /* homepageBox refers to the small items that look like cards */
 .homepageBox h4 {
   padding: 10px 0 5px;
-  color: #252525;
-  font-size: 2.2rem;
   font-weight: 600;
 }
 
@@ -162,10 +146,12 @@ nav ul li+li+li+li {
   background-image: url(/static/images/Las-Canteras_0.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 600px;
+  background-attachment: local;
   height: 100%;
-  /* do not set height using anything other than % as it breaks the responsivenes */
+  min-height: 100vh;
+  width: 90%;
+  min-width: 90vw;
+  /* do not set height using anything other than % as it breaks the responsiveness */
 }
 
 .homepageContent a {
@@ -175,8 +161,6 @@ nav ul li+li+li+li {
 
 .homepageContent h2,
 .homepageContent h3 {
-  color: rgb(243, 233, 233);
-  font-size: 5.5rem;
   text-align: center;
 }
 
@@ -191,40 +175,34 @@ nav ul li+li+li+li {
   margin-top: 0;
 }
 
-.homepageContent h3,
-.fa {
-  font-size: 3rem;
-}
+
 
 .homepageBox,
 .titleBox,
 .boxOne,
 .boxTwo,
 .boxThree {
-  width: 100%;
-  padding: 40px 55px;
-  margin: 15px 0;
-  min-height: 250px;
-  display: table;
+  width: 80%;
+  height: 50%;
+  padding: 40px 0px;
+  margin:  auto;
+  min-height: 25vh;
+  display: flex;
   text-align: center;
-  color: inherit;
-  transition: background-color, 0.25s, ease-in-out;
-}
-
-.homepageBox i {
-  height: 4vh;
-  width: 4vw;
+  transition: background-color, 0.5s, ease-in-out;
 }
 
 
 /* individual boxes */
 .titleBox {
-  background: rgba(82, 69, 53, 0.24);
+  background: rgba(59, 59, 58, 0.678);
   color: #fafafa;
 }
 
 .boxOne {
   background: rgba(55, 117, 114, 0.521);
+  color: #fafafa;
+  margin-left: 5rem;
 }
 
 .boxTwo {
@@ -233,25 +211,14 @@ nav ul li+li+li+li {
 
 .boxThree {
   background: rgba(88, 87, 83, 0.534);
+  color: #fafafa;
+  margin-right: 5rem;
 }
 
 .homepageBox .inner {
   display: table-cell;
   width: 100%;
   vertical-align: middle;
-}
-
-.homepageBox .image {
-  text-align: center;
-}
-
-.homepageBox .image img {
-  display: inline-block;
-}
-
-img,
-figure {
-  max-width: 100%;
 }
 
 
@@ -424,7 +391,8 @@ form div i {
 
 /* this is for the all reviews page */
 .view-review-container {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 90vw;
   background-image: url(/static/images/sunset-canteras.jpg);
   background-size: cover;
@@ -533,9 +501,10 @@ and so is proofed against whatever image the user uploads*/
 /* Profile */
 
 .container-profile {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 90vw;
-  background-image: url(/static/images/sunset-las-canteras-beach-las-palmas.jpg);
+  background-image: url(/static/images/8501f2d921fdc9a72998a77d57ca0359.webp);
   background-size: cover;
   margin: auto;
   position: relative;
@@ -550,7 +519,7 @@ and so is proofed against whatever image the user uploads*/
 /* MEDIA QUERIES */
 
 
-/* the breakpoints here are based on bootstrap, and target various pages differenttly, i.e at various breakpoints */
+/* the breakpoints here are based on bootstrap, and target various pages differently, i.e at various breakpoints */
 @media screen and (max-width: 991px) {
 
   .homepageBox,
@@ -561,6 +530,10 @@ and so is proofed against whatever image the user uploads*/
     padding: 20px 55px;
     width: 100%;
     min-height: 200px;
+  }
+
+  .boxOne {
+    margin-left: 0rem;
   }
 
   /* this makes the various buttons look better */
@@ -594,7 +567,7 @@ and so is proofed against whatever image the user uploads*/
   .view-review-container,
   .container-reg,
   .container-profile,
-  .container-review {
+  .container-review, .homepageContent {
     width: 90%;
     height: 100%;
     min-height: 80vh;
@@ -662,7 +635,8 @@ and so is proofed against whatever image the user uploads*/
     padding-left: 80px;
   }
 
-  .homepageBox.titleBox,
+  .homepageBox,
+  .titleBox,
   .boxOne,
   .boxTwo,
   .boxThree {
@@ -697,4 +671,15 @@ and so is proofed against whatever image the user uploads*/
       padding: 20px;
     }
   }
+
+  @media (max-width: 280px) {
+
+    nav ul li i, nav ul li p {
+      font-size: 15px;
+      margin-right: 10px;
+    }
+  }
+
+
+
 }
