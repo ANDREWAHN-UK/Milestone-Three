@@ -7,15 +7,11 @@
             <div class="inputs">
                 <label for="search"></label>
                 <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
-                <button type="submit">Search</button>
+                <button class="search-button" type="submit">Search</button><a class="search-button"
+                    href="{{ url_for('reviews') }}">Reset</a>
             </div>
         </form>
     </div>
-
-
-
-
-
 
 
     <div class="row">
@@ -66,20 +62,12 @@
                     </div>
                 </div>
 
-
             </div>
 
-
-
             {% endfor %}
-
-
         </div>
+
     </div>
-
-
-
-
 
 </div>
 {% endblock  %}

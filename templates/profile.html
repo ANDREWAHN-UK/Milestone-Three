@@ -30,19 +30,20 @@
   <div class="row">
     <div class="col-md-12">
 
-      <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
-        Review</a>
+      
 
         <div class="row">
           <form action="{{url_for('search')}}" method="post" class="search-container">
               <div class="inputs">
                   <label for="search"></label>
                   <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
-                  <button type="submit">Search</button>
+                  <button  class="search-button" type="submit">Search</button><a  class="search-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a>
               </div>
           </form>
       </div>
-      <h5>Your reviews</h5>
+      <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
+        Review</a>
+      <h3 class="review-button"><i class="fas fa-arrow-down"></i>Your reviews<i class="fas fa-arrow-down"></i></h3>
       {% for review in reviews %}
       {% if session.user == review.created_by %}
       <div class="accordion" id="accordionExample">
@@ -86,6 +87,8 @@
 
       </div>{% endif %}
       {% endfor %}
+
+      
     </div>
   </div>
 </div>
