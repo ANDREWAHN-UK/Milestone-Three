@@ -101,6 +101,12 @@ def reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
+    return render_template("reviews.html", reviews=reviews)
+
 @app.route("/logout")
 def logout():
     flash("Goodbye, thanks for visiting")
