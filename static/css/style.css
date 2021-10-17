@@ -427,7 +427,7 @@ form div i {
 }
 
 .card-text:hover {
-  background-color: #333;
+  background-color: rgba(197, 174, 41, 0.459);
 }
 
 /* this sets the behaviours for the images that appear, which are uploaded by the user */
