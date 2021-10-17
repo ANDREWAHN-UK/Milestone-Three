@@ -177,7 +177,7 @@ nav ul li i {
 .titleBox,
 .boxOne,
 .boxTwo,
-.boxThree {
+.boxThree, .boxFour {
   width: 80%;
   height: 50%;
   padding: 40px 0px;
@@ -205,11 +205,17 @@ nav ul li i {
   background: rgba(245, 222, 179, 0.521);
 }
 
-.boxThree {
+.boxThree, .boxFour {
   background: rgba(88, 87, 83, 0.534);
   color: #fafafa;
-  margin-right: 5rem;
+  margin-right: 5rem; 
 }
+
+.boxFour{
+  min-height: 15vh;
+}
+
+
 
 .homepageBox .inner {
   display: table-cell;
@@ -410,8 +416,7 @@ form div i {
 
 .accordion{
   width: 50%;
-  margin: auto;
-  
+  margin: auto;  
 }
 
 .accordion-item, .accordion-button{
@@ -509,6 +514,10 @@ and so is proofed against whatever image the user uploads*/
   text-align: center;
 }
 
+.container-profile h1{
+  color: #fff;
+}
+
 .user-image {
   max-height: 100%;
   max-width: 100%;
@@ -535,8 +544,7 @@ and so is proofed against whatever image the user uploads*/
   width: 100%;
   padding: 0;
   border: none;
-  outline: none;
-  
+  outline: none;  
 }
 
 /* MEDIA QUERIES */
@@ -549,11 +557,15 @@ and so is proofed against whatever image the user uploads*/
   .titleBox,
   .boxOne,
   .boxTwo,
-  .boxThree {
+  .boxThree{
     width: 100%;
     min-height: 200px;
   }
 
+  .accordion{
+    width: 100%;
+  }
+  
   .boxOne {
     margin-left: 0rem;
   }
@@ -650,9 +662,7 @@ and so is proofed against whatever image the user uploads*/
   }
 
   /* on smaller screens, the background profile image grabs too much attention, so this remedies that */
-  .container-profile{
-    background-image: none;
-  }
+  
 
 }
 
