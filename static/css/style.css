@@ -402,9 +402,6 @@ form div i {
   text-align: center;
 }
 
-.container-review label {
-  color: #fafafa;
-}
 
 /* this targets the input fields */
 .review-field {
@@ -545,6 +542,10 @@ and so is proofed against whatever image the user uploads*/
   padding: 0;
   border: none;
   outline: none;  
+}
+
+#search{
+  width:80%;
 }
 
 /* MEDIA QUERIES */
