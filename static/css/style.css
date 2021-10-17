@@ -424,7 +424,10 @@ form div i {
 .accordion-button {
   background-color: rgba(0, 0, 0, 0.158);
   color: #fafafa;
+}
 
+.card-text:hover {
+  background-color: #333;
 }
 
 /* this sets the behaviours for the images that appear, which are uploaded by the user */
@@ -440,7 +443,8 @@ form div i {
 .review-button,
 .edit-review-button,
 .delete-review-button,
-.cancel-button {
+.cancel-button,
+.search-button {
   padding: 10px 5px;
   width: 25%;
   gap: 15px;
@@ -459,6 +463,13 @@ form div i {
 .review-button {
   color: white;
   background-color: #2a998aa2;
+  margin: auto;
+}
+
+.search-button {
+  padding: 6px 5px;
+  color: white;
+  border: none;
   margin: auto;
 }
 
@@ -487,7 +498,8 @@ form div i {
   color: white;
 }
 
-.review-button:hover {
+.review-button:hover,
+.search-button:hover {
   color: #2a998a;
   box-shadow: 0 0 5px #2a998a;
   text-shadow: 0 0 5px #2a998a;
@@ -561,11 +573,12 @@ form div i {
     min-height: 200px;
   }
 
-  /* makes the accordion spoan the whole width */
+  /* makes the accordion span the whole width */
   .accordion {
     width: 100%;
   }
 
+  
   /* resets boxOne position */
   .boxOne {
     margin-left: 0rem;
@@ -603,7 +616,7 @@ form div i {
 
   /* this positions the search box more nicely, and removes the gap between it and the following .accordion */
   .search-container {
-    width: 100%;
+    width: 95%;
     margin-bottom: 0;
   }
 
@@ -726,5 +739,3 @@ form div i {
 
 
 }
-
-
