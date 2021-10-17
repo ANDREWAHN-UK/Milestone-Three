@@ -33,14 +33,14 @@
       <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
         Review</a>
 
-      <div class="search-container">
-
-        <div class="inputs">
-          <label for="search">Search Box</label>
-          <input id="search" name="search" type="text" placeholder="Search Box" />
-          <button type="submit">Search</button>
-        </div>
-
+        <div class="row">
+          <form action="{{url_for('search')}}" method="post" class="search-container">
+              <div class="inputs">
+                  <label for="search"></label>
+                  <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
+                  <button type="submit">Search</button>
+              </div>
+          </form>
       </div>
       <h5>Your reviews</h5>
       {% for review in reviews %}

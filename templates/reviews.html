@@ -2,30 +2,26 @@
 {% block content %}
 <div class="view-review-container">
 
+    <div class="row">
+        <form action="{{url_for('search')}}" method="post" class="search-container">
+            <div class="inputs">
+                <label for="search"></label>
+                <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
 
 
 
     <div class="row">
         <div class="col-md-12">
 
-
-            <div class="search-container">
-
-                <div class="inputs">
-                    <label for="search">Search Box</label>
-                    <input id="search" name="search" type="text" placeholder="Search Box" />
-                    <button type="submit">Search</button>
-                </div>
-
-            </div>
-
-
-
-
-
             {% for review in reviews %}
-
-
 
             <div class="accordion" id="accordionExample">
 
@@ -82,8 +78,8 @@
     </div>
 
 
+
+
+
 </div>
-
-
-
 {% endblock  %}
