@@ -8,15 +8,24 @@
 
     </div>
     <div class="col-md-8">
-      <h5> Your Biography</h5>
 
-      {{user_bio}}
+      <!-- reusing working code from homepage -->
+
+      <a href="{{ url_for('register') }}">
+        <div class="homepageBox boxFour">
+          <div class="inner">
+            <i class="fas fa-user"></i>
+            <h5> Your Biography</h5>
+            <p>{{user_bio}}</p>
+          </div>
+        </div>
+      </a>
 
     </div>
 
   </div>
-       
- 
+
+
 
   <div class="row">
     <div class="col-md-12">
@@ -24,19 +33,19 @@
       <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
         Review</a>
 
-        <div class="search-container">
-          
-          <div class="inputs">            
-            <label for="search">Search Box</label>
-            <input id="search" name="search" type="text" placeholder="Search Box" />
-            <button type="submit">Search</button>
-          </div>
-          
+      <div class="search-container">
+
+        <div class="inputs">
+          <label for="search">Search Box</label>
+          <input id="search" name="search" type="text" placeholder="Search Box" />
+          <button type="submit">Search</button>
         </div>
+
+      </div>
       <h5>Your reviews</h5>
       {% for review in reviews %}
       {% if session.user == review.created_by %}
-      <div class="accordion " id="accordionExample">
+      <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -74,8 +83,8 @@
           </div>
         </div>
         {% endif %}
-        {% endfor %}
-      </div>
+
+      </div>{% endfor %}
     </div>
   </div>
 </div>
