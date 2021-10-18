@@ -420,13 +420,14 @@ form div i {
 }
 
 .accordion {
-  width: 50%;
+  width: 80%;
   margin: auto;
 
 }
 
-.accordion-item,
-.accordion-button {
+/* both collapsed and not collapsed need to be here, if one wants the button look to stay consistent */
+.accordion-item,  .accordion-button.collapsed, .accordion-button:not(.collapsed) 
+ {
   background-color: rgba(0, 0, 0, 0.158);
   color: #fafafa;
 }
