@@ -1,108 +1,83 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MILESTONE PROJECT THREE
+![image](https://i.imgur.com/XCHBmiZ.jpg)
+ - - - -
 
-Welcome ANDREWAHN-UK,
+**1. Purpose of the project:**
+ - - - -
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+When I was living in Spain, I ran an [Airbnb](https://www.airbnb.co.uk/rooms/18222301), which is still in operation. Naturally I now use agents to run it. Airbnb has a feature called [Guide Books](https://www.airbnb.co.uk/s/guidebooks?refinement_paths[]=/guidebooks/134487) , which is something the host can upload, as an adjunct to the listing. When I set up the listing, I started the guidebook, but quickly realised that to do it well would be extremely time intensive, especially considering that the area in question, if one considers just the beach, is 3 miles long. That means very many restaurants, bars etc.
 
-## Gitpod Reminders
+ I had the onerous task of trying most of them. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+With Milestone Project 3, it seemed a natural idea to ask the guests to register on this review site (along with friends still there) and leave reviews, for future guests. In other words, a version of [Trip Advisor](https://www.tripadvisor.co.uk/) made by guests, for guests, that other people can view.
 
-`python3 -m http.server`
+Limiting the scope like this has the advantages of users being already interested (As it sparks good memories of their stay or gives them ideas for future stays) and also makes my job as a host considerably easier, as approximately one in three guests asks for a place to eat or drink. By default, I recommend the closest (very good) [Italian restaurant](https://ristorantepiemonte.com/) but being able to present them with a semi-curated and useful guide would uplift their experience.
+It is potentially good advertising for the listing in question, which has in excess of 100 very positive reviews.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+- - - - 
+**2. User Goals/stories**
+ - - - -
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+ * As a **Potential Employer** for a Coding Role, I want to view Andrew’s website, to see how he performs as a Full stack developer. I want to be able to navigate the website and compare it to others, of similar scope.
+* As a **Potential Employer** for a Coding Role, further to the above, I would be particularly interested in the use of Python and Flask in this website.
+* As a **Potential new visitor** to Las Palmas, specifically this Airbnb listing, I want to be able to read reviews, so I can decide where to go eat/drink
+* As a **returning visitor** I want to see what is new, to inform future visits.
+* As a **previous visitor who has patronised the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
+* As a **resident of the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
+* As an **adminstrator of the website** I want to be able to update and delete other peoples' reviews and profiles.
 
-A blue button should appear to click: _Make Public_,
+ - - - - 
+**3. Stakeholder Goals**
+ - - - -
 
-Another blue button should appear to click: _Open Browser_.
+ * To lead the user to create a profile 
+ * To lead the user to read and leave reviews.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- - - - 
+**4. Typography and colour scheme:**
+ - - - -
+*	Font - Lato. For the simple reason that it worked well.
+*	Icons - very few icons were used here. I used font awesome for the icons.
+*	Colours – I want to emphasise Las Canteras beach, which means lots of sea and beach and sun related colours, and the national colours of the island are yellow, blue, and white. This review site is meant to complement an existing Airbnb listing, which has been decorated in …yellow, blue and white.
+*	Images – I sourced the images from google images, Unsplash and the official [Las Canteras beach website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/), as well as my own images.
 
-To log into the Heroku toolbelt CLI:
+ - - - - 
+**5. Features:**
+ - - - -
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- - - - 
+**6. Wireframes:**
+- - - -
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- - - - 
+ **7. Technology.**
+- - - -
 
-------
+- - - - 
+**8. Testing.**
+- - - - 
 
-## Release History
+- - - - 
+**9. Deployment.**
+- - - - 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- - - - 
+  **10. Credits**
+- - - - 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+**Media:**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ * [Unsplash](https://unsplash.com/) for some of the images used.
+ * [Google](https://www.google.com/)  for other images
+ * [My Listing](https://www.airbnb.co.uk/rooms/18222301)  for some of my own images
+ * [The Official Las Canteras website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/)  for some images
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+**Acknowledgements:**
+* Code Institute slack community
+* Code Institute tutor support 
+* Code Institute mentor (Rohit Sharma)
+* [StackOverflow](https://stackoverflow.com/) - for various fixes
