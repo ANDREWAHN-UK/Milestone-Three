@@ -52,6 +52,45 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
+def edit_profile(user_id):
+
+    if request.method == "POST":
+        
+        update_register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "image_url": request.form.get("image_url"),
+            "user_bio": request.form.get("user_bio")
+        }
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        mongo.db.users.update({"_id": ObjectId(user_id)}, update_register)
+        flash("Profile Successfully Edited")
+        review = mongo.db.reviews.find()
+        return redirect(url_for("profile", username=username, review=review))
+        
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    categories = mongo.db.category.find().sort("category_name", 1)
+    ratings = mongo.db.rating.find().sort("rating", 1)
+    visits = mongo.db.visit.find().sort("type", 1)
+    users = mongo.db.users.find().sort("username")
+
+    return render_template(
+        "edit_profile.html", categories=categories,
+        visits=visits, ratings=ratings, users=users, user=user)
+
+
+@app.route("/delete_review/<user_id>")
+def delete_profile(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("User Successfully Deleted")
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return redirect(url_for("login", username=username, user=user))
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -86,11 +125,14 @@ def profile(username):
     user_bio = mongo.db.users.find_one(
         {"username": session["user"]})["user_bio"]
     
+    users = mongo.db.users.find().sort("username")
+    user = mongo.db.users.find()
+    
     if session["user"]:
         return render_template(
             "profile.html", username=username,
             review=review, reviews=reviews,
-            user_image=user_image, user_bio=user_bio)
+            user_image=user_image, user_bio=user_bio, users=users, user=user)
 
     return redirect(url_for("login"))
 
@@ -98,7 +140,8 @@ def profile(username):
 @app.route("/reviews")
 def reviews():
     reviews = mongo.db.reviews.find().sort("visit_date")
-    return render_template("reviews.html", reviews=reviews)
+    users = mongo.db.users.find().sort("username")
+    return render_template("reviews.html", reviews=reviews, users=users)
 
 
 @app.route("/search", methods=["GET", "POST"])
