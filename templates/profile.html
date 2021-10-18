@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-profile">
-  <div class="row boxFour">
+  <div class="row ">
     <h1>{{username|capitalize}}'s Profile Page</h1>
     <div class="col-md-3 ">
       <img class="user-image" src="{{user_image }}" alt="profile image for {{ username }}">
@@ -35,8 +35,10 @@
             <button class="search-button" type="submit">Search</button>
             <a class="search-button"
               href="{{ url_for('profile', username=session['user']) }}">Reset</a>
+              
           </div>
         </form>
+        
       </div>
 
       {% if session.user == "admin_user" %}
@@ -46,7 +48,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-6">
               <p class="btn review-button">
-                <i class="fas fa-arrow-down"></i>Here you can edit/delete profiles<i class="fas fa-arrow-down"></i>
+                <i class="fas fa-arrow-down"></i>edit/delete profiles<i class="fas fa-arrow-down"></i>
               </p>
             </div>
           </div>
@@ -100,7 +102,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-6">
               <p class="btn review-button">
-                <i class="fas fa-arrow-down"></i>Here you can edit/delete Reviews<i class="fas fa-arrow-down"></i>
+                <i class="fas fa-arrow-down"></i>edit/delete Reviews<i class="fas fa-arrow-down"></i>
               </p>
             </div>
           </div>
@@ -153,8 +155,18 @@
 
       {% else %}
 
-      <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
-        Review</a>
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <p>
+            <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
+              Review</a>
+          </p>
+        </div>
+      </div>
+
+      
+
+      
 
         {% for review in reviews %}
         {% if session.user == review.created_by %}
