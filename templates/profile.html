@@ -1,94 +1,211 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-profile">
-  <div class="row ">
-    <h1>Your Profile Page</h1>
-    <div class="col-md-4 ">
+  <div class="row boxFour">
+    <h1>{{username|capitalize}}'s Profile Page</h1>
+    <div class="col-md-3 ">
       <img class="user-image" src="{{user_image }}" alt="profile image for {{ username }}">
 
     </div>
-    <div class="col-md-8">
-
+    <div class="col-md-9">
       <!-- reusing working code from homepage -->
 
-      <a href="{{ url_for('register') }}">
-        <div class="homepageBox boxFour">
-          <div class="inner">
-            <i class="fas fa-user"></i>
-            <h5> Your Biography</h5>
-            <p>{{user_bio}}</p>
-          </div>
+      <div class="homepageBox ">
+
+        <div class="inner">
+          <i class="fas fa-user"></i>
+          <h5> Your Biography</h5>
+          <p>{{user_bio}}</p>
         </div>
-      </a>
+
+      </div>
 
     </div>
-
   </div>
-
-
 
   <div class="row">
     <div class="col-md-12">
 
-      
+      <div class="row">
 
-        <div class="row">
-          <form action="{{url_for('search')}}" method="post" class="search-container">
-              <div class="inputs">
-                  <label for="search"></label>
-                  <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
-                  <button  class="search-button" type="submit">Search</button><a  class="search-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a>
-              </div>
-          </form>
+        <form action="{{url_for('search')}}" method="post" class="search-container">
+          <div class="inputs">
+            <label for="search"></label>
+            <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
+            <button class="search-button" type="submit">Search</button>
+            <a class="search-button"
+              href="{{ url_for('profile', username=session['user']) }}">Reset</a>
+          </div>
+        </form>
       </div>
-      <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
-        Review</a>
-      <h3 class="review-button"><i class="fas fa-arrow-down"></i>Your reviews<i class="fas fa-arrow-down"></i></h3>
-      {% for review in reviews %}
-      {% if session.user == review.created_by %}
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
-              {{ review.place_name }}
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row">
-                <div class="col-sm-6">
-                  <img class="card-img" src="{{review.image_url }} " alt="Card image">
-                </div>
 
-                <div class="col-sm-6">
-                  <strong>You visited: {{ review.place_name }}</strong></h5>
+      {% if session.user == "admin_user" %}
 
-                  <p class="card-text"> and went there for {{review.visit_type}}<br>
-                  </p>
-                  <p class="card-text"> on {{review.visit_date}} <br>
-                  </p>
-                  <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
-                  </p>
-                  <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
-                  </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
-                  <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-6">
+              <p class="btn review-button">
+                <i class="fas fa-arrow-down"></i>Here you can edit/delete profiles<i class="fas fa-arrow-down"></i>
+              </p>
+            </div>
+          </div>
+
+          {% for user in users%}
+
+          <div class="accordion" id="accordionExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  For the user named {{ user.username|capitalize }}
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <img class="card-img" src="{{user.image_url }} " alt="Card image">
+                    </div>
+
+                    <div class="col-sm-6">
+                      </h5>
+
+                      <p class="card-text"> {{user.user_bio}}<br>
+                      </p>
+
+                      </p><a href="{{ url_for('edit_profile', user_id=user._id) }}" class="edit-review-button">Edit
+                        Profile</a>
+                      <a href="{{ url_for('delete_profile', user_id=user._id) }}" class="delete-review-button">Delete
+                        Profile </a>
+                        <a class="review-button"
+                        href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+
+                    </div>
+                  </div>
                 </div>
               </div>
-
-
             </div>
 
+          </div>
+
+          {% endfor %}
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-6">
+              <p class="btn review-button">
+                <i class="fas fa-arrow-down"></i>Here you can edit/delete Reviews<i class="fas fa-arrow-down"></i>
+              </p>
+            </div>
+          </div>
+
+          {% for review in reviews%}
+
+          <div class="accordion" id="accordionExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  {{ review.place_name }}
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <img class="card-img" src="{{review.image_url }} " alt="Card image">
+                    </div>
+    
+                    <div class="col-sm-6">
+                      <strong>You visited: {{ review.place_name }}</strong></h5>
+    
+                      <p class="card-text"> and went there for {{review.visit_type}}<br>
+                      </p>
+                      <p class="card-text"> on {{review.visit_date}} <br>
+                      </p>
+                      <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
+                      </p>
+                      <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
+                      </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
+                      <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
+                      <a class="review-button"
+                            href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
+
+          {% endfor %}
         </div>
+
+      </div>
+
+      {% else %}
+
+      <a href="{{ url_for('create_review') }}" class="btn review-button"><i class="far fa-plus-square"></i> New
+        Review</a>
+
+        {% for review in reviews %}
+        {% if session.user == review.created_by %}
         
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{ review.place_name }}
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img class="card-img" src="{{review.image_url }} " alt="Card image">
+                  </div>
+  
+                  <div class="col-sm-6">
+                    <strong>You visited: {{ review.place_name }}</strong></h5>
+  
+                    <p class="card-text"> and went there for {{review.visit_type}}<br>
+                    </p>
+                    <p class="card-text"> on {{review.visit_date}} <br>
+                    </p>
+                    <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
+                    </p>
+                    <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
+                    </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
+                    <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
+                    <a class="review-button"
+                          href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+                  </div>
+                </div>
+  
+  
+              </div>
+  
+  
+            </div>
+          </div>
+  
+  
+        </div>{% endif %}
+        {% endfor %}
 
-      </div>{% endif %}
-      {% endfor %}
+      {% endif %}
 
-      
+
     </div>
   </div>
 </div>
