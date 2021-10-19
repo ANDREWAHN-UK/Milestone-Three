@@ -196,12 +196,13 @@ nav ul li i {
 .titleBox {
   background: rgba(59, 59, 58, 0.678);
   color: #fafafa;
+  width: 89%;
 }
 
 .boxOne {
   background: rgba(55, 117, 114, 0.521);
   color: #fafafa;
-  margin-left: 5rem;
+  margin-left: 6rem;
 }
 
 .boxTwo {
@@ -212,7 +213,7 @@ nav ul li i {
 .boxFour {
   background: rgba(88, 87, 83, 0.534);
   color: #fafafa;
-  margin-right: 5rem;
+  margin-right: 6rem;
 }
 
 .boxFour {
