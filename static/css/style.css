@@ -445,7 +445,7 @@ form div i {
   margin: auto;
   width: 35%;
   min-width: 35vw;
-  color: white;
+  color: black;
 }
 
 /* The purpose here is to quickly draw attention to the input field labels, 
@@ -454,6 +454,7 @@ as the background can sometimes interfere, no matter the background or fontcolou
 .review-field label{
   animation: pulse 2s ;
   transform: scale(1);
+  color: white;
 }
 
 
