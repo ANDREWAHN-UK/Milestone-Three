@@ -115,6 +115,7 @@ iPhone 8 Creating a Review:
 Full screen (1920*1080) Editing a Review:
 - - - -
 ![image](https://i.imgur.com/r7nn6gx.png)
+- - - -
 iPhone 8 Editing a Review:
 - - - -
 ![image](https://i.imgur.com/f8U0nAU.png)
