@@ -314,18 +314,18 @@ form, .reg-content-edit,
 }
 
 /* This affects the form part of the container, */
-.form-reg {
+.form-reg, .form-login{
   width: 45%;
   top: 0;
   height: 80%;
+  min-height: 91vh;
   background-color: #c4b10b;
 }
 
 .form-login {
-  width: 45%;
   background-color: #2a998a;
-  height: 80%;
 }
+ 
 
 
 /* this is the title text, sitting at the top of the form */
