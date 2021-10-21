@@ -63,14 +63,24 @@ a {
   border-radius: 50%;
   position: relative;
   transition: transform 0.5s linear;
+  
+}
+
+
+.circle-2 {
+  background-color: #2a998a;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.5s linear;
   animation: pulse 2s infinite;
   transform: scale(1);
 }
-
 /* the pulse settings below determine how the effect is seen */
 @keyframes pulse {
 	0% {
-		transform: scale(0.95);
+		transform: scale(1);
 		box-shadow: 0 0 0 0 rgba(158, 149, 27, 0.7);
 	}
 
@@ -80,7 +90,7 @@ a {
 	}
 
 	100% {
-		transform: scale(0.95);
+		transform: scale(1);
 		box-shadow: 0 0 0 0 rgba(158, 149, 27, 0.7);;
 	}
 }
@@ -102,6 +112,7 @@ a {
 
 .circle button#open {
   left: 60%;
+  
 }
 
 .circle button#close {
