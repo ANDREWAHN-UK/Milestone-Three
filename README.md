@@ -79,6 +79,7 @@ Because this website is intended to be quite fun in its theming, the navbar is n
     * The ability for usersto upload their own images, and several of them, would be nice, and have these in a carousel within the review itself
     * A more fleshed out User Profile page, with the ability to edit it, and for others to be able to view it, in effect a very small, highly curated version of Facebook, focussed on the beach 
     * As part of a series I follow on [Udemy,](https://www.udemy.com/course/50-projects-50-days) topractice  HTML, CSS and JS, I created a [Cards website](https://github.com/ANDREWAHN-UK/CARDS), which I think could have worked quite well to display the reviews in their current form, once I got it to work (see Section 10 - Testing for more on this)
+    * A search function for the Admin to go through Users could be helkpful, if the number of users increases significantly.
 
 
 
