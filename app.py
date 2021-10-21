@@ -16,7 +16,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# NB - most of this follows the Code Institute Mini Project in syntax and logic
 @app.route("/")
 @app.route("/go_home")
 def go_home():

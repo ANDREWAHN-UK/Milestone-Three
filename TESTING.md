@@ -26,6 +26,10 @@ It also informed me of several missing semicolons, which I rectified.
 4. I used http://pep8online.com/ to validate the Python code.
     * No errors found
 
+5. Google Light House Audit result:
+- - - -
+![image](https://i.imgur.com/HNM4WUo.png)
+
 - - - -
 *8.2 Test cases/ Testing the user goals/stories (section 2):* 
 - - - -

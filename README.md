@@ -196,13 +196,16 @@ Because this effectively clones the repo, I decided against using the actual clo
 - - - - 
 **Code:** 
 Done by myself, with:
- * some work done by Bootstrap, most notably using grids and columns, and the built in accordion feature.
+ * some work done by [Bootstrap,](https://getbootstrap.com/) most notably using grids and columns, and the built in accordion feature.
  * code from [swiper.js](https://swiperjs.com/get-started) for the carousel
+ * [Code Institute,](https://learn.codeinstitute.net/login?next=/dashboard) namely the Mini Project leading up to Milestone 3
+ * Code from Brian Traversy at [Udemy,](https://www.udemy.com/course/50-projects-50-days) "Rotating Navigation" project, namely the base of the navigation system, then heavily modifed for the site purposes
+ 
 
 **Content:**
 
 All done by me, with ideas and inspiration for input fields and layout from the following:
- *	Code Institute slack community - seeing what people were doing for the 3rd Projerct was a very useful steer in terms of understanding the scope
+ *	Code Institute slack community - seeing what people were doing for the 3rd Project was a very useful steer in terms of understanding the scope
  *	[The Official Las Canteras website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/) - I considered it obligatory to have a look at what the official website considers important
  *	[TripAdvisor](https://www.tripadvisor.co.uk/) - for ideas on creating the reviews section
  *	[Airbnb](https://www.airbnb.co.uk/)		- for their guidebook feature which was the seed idea of this website
@@ -210,7 +213,7 @@ All done by me, with ideas and inspiration for input fields and layout from the 
 **Media:**
 
  * [Unsplash](https://unsplash.com/) for some of the images used.
- * [Google](https://www.google.com/)  for other images
+ * [Google](https://www.google.com/)  for other images.
  * [My Listing](https://www.airbnb.co.uk/rooms/18222301)  for some of my own images, and my guidebook.
  * [The Official Las Canteras website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/)  for some images
 
