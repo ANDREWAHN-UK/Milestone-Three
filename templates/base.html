@@ -53,9 +53,9 @@
     <nav>
         <ul>
 
-            <li><a href="{{ url_for('go_home') }}"><i class="fas fa-home"></i> <p>Home</p> </li>
-            <li><a href="{{ url_for('reviews') }}"><i class="far fa-eye"></i> <p>View  <br> Reviews</p></li>
-            <li><a href="https://www.airbnb.co.uk/rooms/18222301?source_impression_id=p3_1634314778_gEIoDPuQMkNyC9OA&guests=1&adults=1"><i class="fas fa-envelope-square"></i> <p>About</p></li>
+            <li><a href="{{ url_for('go_home') }}"><i class="fas fa-home"></i> <p>Home</p></a> </li>
+            <li><a href="{{ url_for('reviews') }}"><i class="far fa-eye"></i> <p>View  <br> Reviews</p></a></li>
+            <li><a href="https://www.airbnb.co.uk/rooms/18222301?source_impression_id=p3_1634314778_gEIoDPuQMkNyC9OA&guests=1&adults=1"><i class="fas fa-envelope-square"></i> <p>About</p></a></li>
             {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-users"></i><p>Profile</p></a>
             </li>
@@ -63,7 +63,7 @@
 
             <li><a href="{{ url_for('logout') }}"><i class="fas fa-door-open"></i><p>Log Out</p></a></li>
             {% else %}
-            <li><a href="{{ url_for('register') }}"><i class="fas fa-user"></i> <p>Sign In/Up</p></li>
+            <li><a href="{{ url_for('register') }}"><i class="fas fa-user"></i> <p>Sign In/Up</p></a></li>
 
             {% endif %}
 
