@@ -786,6 +786,14 @@ as the background can sometimes interfere, no matter the background or fontcolou
   .form-login {
     padding: 20px;
   }
+
+  .review-button,
+  .edit-review-button,
+  .delete-review-button,
+  .cancel-button {
+    width: 60%;
+    padding: 0px;
+  }
 }
 
 @media (max-width: 280px) {
