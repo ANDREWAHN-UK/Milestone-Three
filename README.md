@@ -69,15 +69,16 @@ Because this website is intended to be quite fun in its theming, the navbar is n
     * (Create /Read /Update/ Delete) own Reviews function
     * Admin to be able to modify all reviews
 * Future features/expanding the website :
-    * This review focussed website could form part of a larger website, intended to highlight the Airbnb listing itself, similar to how the neighbouring building has a [website](https://www.brisamarcanteras.com/) but lists everything through booking.com
+    * This review focused website could form part of a larger website, intended to highlight the Airbnb listing itself, similar to how the neighbouring building has a [website](https://www.brisamarcanteras.com/) but lists everything through booking.com
     * The scope could expand to include places further from the beach
-    * The scope could expand to include events, such as concerts
-    * The website couyld be made available in other languages, such as German, Spanish or Russian, in order to better accomodate the variety of visitors and residents
+    * The scope could expand to include events, such as concerts at the nearby [auditorium](https://auditorioteatrolaspalmasgc.es/)
+    * The website could be made available in other languages, such as German, Spanish or Russian, in order to better accomodate the variety of visitors and residents
     * The scope could be linked to another organisation
     * It would be very useful for users to pin the lkocation on a map, and/or, like with Trip Advisor, have the address of the place to hand
     * Relating to this last, it could be useful for each place to have its own mini page, like a modal, with reviews by various users linked to it
     * The ability for usersto upload their own images, and several of them, would be nice, and have these in a carousel within the review itself
     * A more fleshed out User Profile page, with the ability to edit it, and for others to be able to view it, in effect a very small, highly curated version of Facebook, focussed on the beach 
+    * As part of a series I follow on [Udemy,](https://www.udemy.com/course/50-projects-50-days) topractice  HTML, CSS and JS, I created a [Cards website](https://github.com/ANDREWAHN-UK/CARDS), which I think could have worked quite well to display the reviews in their current form, once I got it to work (see Section 10 - Testing for more on this)
 
 
 
@@ -140,24 +141,71 @@ Frameworks, Libraries & Programs Used:
 - - - - 
 **9. Deployment.**
 - - - - 
-The website has been deployed on:
-* Heroku
+The website has been deployed on
+  *	Heroku.
+
+  9.1 Deploying to Heroku:
+
+    1. You will need an account to sign up to [Heroku](https://www.heroku.com)
+    2. Once logged in click the create new app button
+    3. Select the region closest to you and give the APP a name. It is a good idea to name the App something similar to the Github repository which hosts the files.
+    4. You will see a navbar on Heroku, starting with Overview, and ending with settings. Click the 3rd button, deploy, and in the middle of the page, where it says "deployment method," select "Connect to Github."
+    5. Underneath that, with the tab labelled "Apps connected to GitHub," ensaure that your respository is selected.
+    6. Take note of the tab below , labelled automatic deploys. Do NOT click this yet.
+    7. First, go back to the navbar and click settings.
+    8. Then click "Reveal Config Vars"
+     9. Now fill in the fields, which need to be exactly as they are in your env.py file, minus the "". Be careful here.
+    10. Next, check your Procfile is set up correctly. It should read something like this: "web: python app.py"
+    11. Now, referring back to step 6, click enable automatic deploys
+    12. If done right, at the top right of the webpage, click "open app," and your website should deploy.
+
+ 9.2. Github.
+
+ Github is the preferred version control and hosting website of the Coding Academy. For this project, it is not used to deploy the website, but to host it. Therefore, previous advice  and steps regarding creating a fork/backup apply, see below.
+
+ **To create a fork/backup:**
+
+GitHub does not currently allow you to directly fork your own repo, but there is a workaround:
+
+  1.	make a note of the URL of your repo, e.g., "https://github.com/ANDREWAHN-UK/Milestone-Three"
+  2.	at the very top right of the page, next to your login image and the bell icon, there is a + button, click this.
+  3.	click "import repository”.
+  4.	Where it says, "Your old repository’s clone URL," put in the URL of your repository, e.g., "https://github.com/ANDREWAHN-UK/Milestone-Three"
+  5.	In the "repository name field" choose an appropriate name for your new repository
+  6.	Click "begin import"
+  7.	You now have a copy of your original repository, with all commit history and branches!
+
+However, be aware that this is not a real fork, and so you cannot do pull requests back and forth.
+
+Because this effectively clones the repo, I decided against using the actual clone feature, but information on that can be found [here:](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 - - - - 
   **10. Credits**
 - - - - 
+**Code:** 
+Done by myself, with:
+ * some work done by Bootstrap, most notably using grids and columns, and the built in accordion feature.
+ * code from [swiper.js](https://swiperjs.com/get-started) for the carousel
+
+**Content:**
+
+All done by me, with ideas and inspiration for input fields and layout from the following:
+ *	Code Institute slack community - seeing what people were doing for the 3rd Projerct was a very useful steer in terms of understanding the scope
+ *	[The Official Las Canteras website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/) - I considered it obligatory to have a look at what the official website considers important
+ *	[TripAdvisor](https://www.tripadvisor.co.uk/) - for ideas on creating the reviews section
+ *	[Airbnb](https://www.airbnb.co.uk/)		- for their guidebook feature which was the seed idea of this website
 
 **Media:**
 
  * [Unsplash](https://unsplash.com/) for some of the images used.
  * [Google](https://www.google.com/)  for other images
- * [My Listing](https://www.airbnb.co.uk/rooms/18222301)  for some of my own images
+ * [My Listing](https://www.airbnb.co.uk/rooms/18222301)  for some of my own images, and my guidebook.
  * [The Official Las Canteras website](https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/)  for some images
 
 
 
 **Acknowledgements:**
 * Code Institute slack community
-* Code Institute tutor support 
+* Code Institute tutor support (whilst doing the build up lessons, I ran into some quite severe issues with using Python and Flask, that had I not fixed then, would have derailed the Project)
 * Code Institute mentor (Rohit Sharma)
 * [StackOverflow](https://stackoverflow.com/) - for various fixes
