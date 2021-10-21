@@ -286,11 +286,18 @@ form, .reg-content-edit,
 .reg-content, .reg-content-edit,
 .login-content {
   justify-content: space-around;
-  width: 55%;
+  width: 55%; 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url("/static/images/canteras\ 3.jpg");
+  background-image: url("/static/images/canteras3.jpg");
+}
+
+.reg-content{
+  top:0;
+  height: 80%;
+  min-height: 91vh;
+  margin-top: 0;
 }
 .reg-content-edit{
   background-image: url(/static/images/lc-beach.jpg);
@@ -309,12 +316,15 @@ form, .reg-content-edit,
 /* This affects the form part of the container, */
 .form-reg {
   width: 45%;
+  top: 0;
+  height: 80%;
   background-color: #c4b10b;
 }
 
 .form-login {
   width: 45%;
   background-color: #2a998a;
+  height: 80%;
 }
 
 
@@ -531,6 +541,11 @@ form div i {
   text-shadow: 0 0 5px #2a998a;
 }
 
+
+.admin-text{
+  color: white;
+  padding-top:15px;
+}
 
 /* Profile */
 
