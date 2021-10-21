@@ -136,7 +136,6 @@ Frameworks, Libraries & Programs Used:
 
 - - - - 
 **8. Testing.**
-- - - - 
 
 - - - - 
 **9. Deployment.**
