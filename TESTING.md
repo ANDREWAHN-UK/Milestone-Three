@@ -10,7 +10,7 @@ This is the testing section of the readme, placed in a separate file:
 
 The html validator returned the errors:
   * "End tag li seen, but there were open elements."  This is because I forgot the end </a> on a couple of headings.
-  *	"Section lacks heading. Consider using h2-h6 elements". This was on base.html. Adding a heading meant that heading was visible on all pages, obviously unwanted. So I removed the <section></section>, to no ill effect.
+  *	"Section lacks heading. Consider using h2-h6 elements". This was on base.html. Adding a heading meant that heading was visible on all pages, obviously unwanted. So I removed the section element, to no ill effect.
 
 2. I used https://jigsaw.w3.org/css-validator/ to validate the CSS:
 
