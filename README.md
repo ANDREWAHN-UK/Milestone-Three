@@ -20,13 +20,13 @@ It is potentially good advertising for the listing in question, which has in exc
 **2. User Goals/stories**
  - - - -
 
- * As a **Potential Employer** for a Coding Role, I want to view Andrew’s website, to see how he performs as a Full stack developer. I want to be able to navigate the website and compare it to others, of similar scope.
-* As a **Potential Employer** for a Coding Role, further to the above, I would be particularly interested in the use of Python and Flask in this website.
-* As a **Potential new visitor** to Las Palmas, specifically this Airbnb listing, I want to be able to read reviews, so I can decide where to go eat/drink
-* As a **returning visitor** I want to see what is new, to inform future visits.
-* As a **previous visitor who has patronised the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
-* As a **resident of the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
-* As an **adminstrator of the website** I want to be able to update and delete other peoples' reviews and profiles.
+1. As a **Potential Employer** for a Coding Role, I want to view Andrew’s website, to see how he performs as a Full stack developer. I want to be able to navigate the website and compare it to others, of similar scope.
+2. As a **Potential Employer** for a Coding Role, further to the above, I would be particularly interested in the use of Python and Flask in this website.
+3. As a **Potential new visitor** to Las Palmas, specifically this Airbnb listing, I want to be able to read reviews, so I can decide where to go eat/drink
+4. As a **returning visitor** I want to see what is new, to inform future visits.
+5. As a **previous visitor who has patronised the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
+6. As a **resident of the area** I want to be able to create, update and delete my own reviews, so as ensure other people are aware of the good and perhaps not so good establishments.
+7. As an **administrator of the website** I want to be able to update and delete other peoples' reviews and profiles.
 
  - - - - 
 **3. Stakeholder Goals**
@@ -46,40 +46,51 @@ It is potentially good advertising for the listing in question, which has in exc
  - - - - 
 **5. Features:**
  - - - -
-* Feature - Header/Navbar basic - to consist of links to the home page, reviews page, about page (a link to the Airbnb listing,) log in/register page (replaced by a log out link once the user is logged in) and user profile (shows once a user is logged in) 
+1. Feature - Header/Navbar basic - to consist of links to the home page, reviews page, about page (a link to the Airbnb listing,) log in/register page (replaced by a log out link once the user is logged in) and user profile (shows once a user is logged in) 
 
 Because this website is intended to be quite fun in its theming, the navbar is not at the top as is traditional, but comes in from the left, when the top left circle is clicked. This was intended as a bit of whimsy, and also to allow maximum use of the screen for beach themed images.
-* Feature - Navbar plus – log out button to replace login/register, link to Profile Page, link to New Review 
-* Page - Homepage – with search functionality, clear images about Las Canteras, and some links to reviews page, about page (a link to the Airbnb listing,) log in/register page.
-* Page - create and edit review page
-* Page - Log In / Registration Page – to register a user (updating the database) or log them in (checking the database)
-* Page - User Profile Page – available once user logs in. This is where users can manipulate their data.
-* Function – Create User
-* Function – Create Review
-* Function – Read Review
-* Function – Update Review
-* Function – Delete Review
-* Minimal Viable Project is :
-    * Navbar basic
-    * Homepage
-    * Registration/ Log in page
-    * User profile Page (once logged in)
-    * Reviews page (i.e. view all reviews)
-    * Create User function
-    * (Create /Read /Update/ Delete) own Reviews function
-    * Admin to be able to modify all reviews
-* Future features/expanding the website :
-    * This review focused website could form part of a larger website, intended to highlight the Airbnb listing itself, similar to how the neighbouring building has a [website](https://www.brisamarcanteras.com/) but lists everything through booking.com
-    * The scope could expand to include places further from the beach
-    * The scope could expand to include events, such as concerts at the nearby [auditorium](https://auditorioteatrolaspalmasgc.es/)
-    * The website could be made available in other languages, such as German, Spanish or Russian, in order to better accomodate the variety of visitors and residents
-    * The scope could be linked to another organisation
-    * It would be very useful for users to pin the lkocation on a map, and/or, like with Trip Advisor, have the address of the place to hand
-    * Relating to this last, it could be useful for each place to have its own mini page, like a modal, with reviews by various users linked to it
-    * The ability for usersto upload their own images, and several of them, would be nice, and have these in a carousel within the review itself
-    * A more fleshed out User Profile page, with the ability to edit it, and for others to be able to view it, in effect a very small, highly curated version of Facebook, focussed on the beach 
-    * As part of a series I follow on [Udemy,](https://www.udemy.com/course/50-projects-50-days) topractice  HTML, CSS and JS, I created a [Cards website](https://github.com/ANDREWAHN-UK/CARDS), which I think could have worked quite well to display the reviews in their current form, once I got it to work (see Section 10 - Testing for more on this)
-    * A search function for the Admin to go through Users could be helkpful, if the number of users increases significantly.
+
+2. Feature - Navbar plus – log out button to replace login/register, link to Profile Page, link to New Review 
+
+3. Page - Homepage – with search functionality, clear images about Las Canteras, and some links to reviews page, about page (a link to the Airbnb listing,) log in/register page.
+
+4. Page - create and edit review page
+
+5. Page - Log In / Registration Page – to register a user (updating the database) or log them in (checking the database)
+
+6. Page - User Profile Page – available once user logs in. This is where users can manipulate their data.
+
+7. Function – Create User
+
+8. Function – Create Review
+
+9. Function – Read Review
+
+10. Function – Update Review
+
+11. Function – Delete Review
+
+12. Minimal Viable Project is :
+    1. Navbar basic
+    2. Homepage
+    3. Registration/ Log in page
+    4. User profile Page (once logged in)
+    5. Reviews page (i.e. view all reviews)
+    6. Create User function
+    7. (Create /Read /Update/ Delete) own Reviews function
+    8. Admin to be able to modify all reviews
+13. Future features/expanding the website :
+    1. This review focused website could form part of a larger website, intended to highlight the Airbnb listing itself, similar to how the neighbouring building has a [website](https://www.brisamarcanteras.com/) but lists everything through booking.com
+    2. The scope could expand to include places further from the beach
+    3. The scope could expand to include events, such as concerts at the nearby [auditorium](https://auditorioteatrolaspalmasgc.es/)
+    4. The website could be made available in other languages, such as German, Spanish or Russian, in order to better accomodate the variety of visitors and residents
+    5. The scope could be linked to another organisation
+    6. It would be very useful for users to pin the lkocation on a map, and/or, like with Trip Advisor, have the address of the place to hand
+    7. Relating to this last, it could be useful for each place to have its own mini page, like a modal, with reviews by various users linked to it
+    8. The ability for usersto upload their own images, and several of them, would be nice, and have these in a carousel within the review itself
+    9. A more fleshed out User Profile page, with the ability to edit it, and for others to be able to view it, in effect a very small, highly curated version of Facebook, focussed on the beach 
+    10. As part of a series I follow on [Udemy,](https://www.udemy.com/course/50-projects-50-days) to practice  HTML, CSS and JS, I created a [Cards website](https://github.com/ANDREWAHN-UK/CARDS), which I think could have worked quite well to display the reviews in their current form, once I got it to work (see Section 10 - Testing for more on this)
+    11. A search function for the Admin to go through Users could be helkpful, if the number of users increases significantly.
 
 
 
