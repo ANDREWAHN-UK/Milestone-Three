@@ -12,16 +12,14 @@ The html validator returned the errors:
   * "End tag li seen, but there were open elements."  This is because I forgot the end </a> on a couple of headings.
   *	"Section lacks heading. Consider using h2-h6 elements". This was on base.html. Adding a heading meant that heading was visible on all pages, obviously unwanted. So I removed the <section></section>, to no ill effect.
 
-2. I used https://jigsaw.w3.org/css-validator/ to validate the CSS.
+2. I used https://jigsaw.w3.org/css-validator/ to validate the CSS:
 
-:
   * The CSS returned some errors to do with bootstrap.min.css and swiper-bundle.css, none with Style.css"
 
-3. On the recommendation of my tutor, I used https://jshint.com/ to validate the JavaScript.
+3. On the recommendation of my tutor, I used https://jshint.com/ to validate the JavaScript:
 
 With jshint, it informed me of the following:
   * 	'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-
 In other words, no real errors, probably because there was little Javascript used, compared to the previous Project.
 It also informed me of several missing semicolons, which I rectified.
 
@@ -43,11 +41,11 @@ It also informed me of several missing semicolons, which I rectified.
 * The navbar reinforces these options once rendered visible. To render it visible, the user clicks the top left button. This has a gentle animation that draws the users' attention, effectively mimicking the sun.
 - - - -
   Full screen (1920*1080) homepage
-  - - - -
+- - - -
 ![image](https://i.imgur.com/PxAKljU.png)
 - - - -
 Full screen (1920*1080) Reviews
-  - - - -
+- - - -
   ![image](https://i.imgur.com/VP0FYlI.png)
 - - - -
 - - - -
@@ -56,17 +54,15 @@ Full screen (1920*1080) Register
   ![image](https://i.imgur.com/qRB6lXg.png)
 - - - -
  Reviews with an iPhone 8:
- - - - -
+- - - -
 ![image](https://i.imgur.com/Hl80rEw.png)
 - - - -
-- - - -
  Register with an iPhone 8:
- - - - -
+- - - -
 ![image](https://i.imgur.com/EfrLt6c.png)
 - - - -
-- - - -
  Homepage with an iPhone 8:
- - - - -
+- - - -
 ![image](https://i.imgur.com/BFsvkpH.png)
 - - - -
 
@@ -74,80 +70,73 @@ Full screen (1920*1080) Register
 * Users can quickly and easily view the reviews and Home pages.
 - - - -
   Full screen (1920*1080) homepage, navbar open
-  - - - -
+- - - -
 ![image](https://i.imgur.com/rUAuTiT.png)
 - - - -
 Full screen (1920*1080) Reviews
-  - - - -
-  ![image](https://i.imgur.com/VP0FYlI.png)
 - - - -
+  ![image](https://i.imgur.com/VP0FYlI.png)
 - - - -
  Homepage with an iPhone 8, navbar open:
  - - - -
 ![image](https://i.imgur.com/gDDuBSI.png)
 - - - -
-- - - -
  Reviews with an iPhone 8:
- - - - -
+- - - -
 ![image](https://i.imgur.com/Hl80rEw.png)
 - - - -
 
 3. Users that want to create/update and delete reviews:
 * The create, edit and delete functionality is accessed via the Profile and Review pages.
 Full screen (1920*1080) User Profile
-  - - - -
+- - - -
   ![image](https://i.imgur.com/cxzjvVX.png)
 - - - -
-- - - -
 iPhone 8 User Profile:
- - - - -
+- - - -
 ![image](https://i.imgur.com/1NK6NiJ.png)
 - - - -
 Full screen (1920*1080) Reviews page with edit/delete buttons
-  - - - -
+- - - -
   ![image](https://i.imgur.com/pT9iKjo.png)
 - - - -
-- - - -
 iPhone 8 Reviews page with edit/delete buttons:
- - - - -
+- - - -
 ![image](https://i.imgur.com/QU3cA17.png)
 - - - -
 Full screen (1920*1080) Creating a Review:
- - - - -
+- - - -
 ![image](https://i.imgur.com/nkPGMJp.png)
 - - - -
 iPhone 8 Creating a Review:
- - - - -
+- - - -
 ![image](https://i.imgur.com/fHZdY4I.png)
 - - - -
 Full screen (1920*1080) Editing a Review:
- - - - -
+- - - -
 ![image](https://i.imgur.com/r7nn6gx.png)
 iPhone 8 Editing a Review:
- - - - -
+- - - -
 ![image](https://i.imgur.com/f8U0nAU.png)
 - - - -
 
 4. Admin user:
 When logged in as Admin, User can access all reviews *and* profiles, via Profile and Reviews Page.
 Full screen (1920*1080) Admin Profile
-  - - - -
+- - - -
   ![image](https://i.imgur.com/8kwbTFV.png)
 - - - -
-- - - -
 iPhone 8 Admin Profile:
- - - - -
+- - - -
 ![image](https://i.imgur.com/RkDh9Tm.png)
 - - - -
 Full screen (1920*1080) Admin Profile page, showing  edit/delete Profiles function
 - - - -
   ![image](https://i.imgur.com/A6HbNwc.png)
 - - - -
-- - - -
 iPhone 8 Admin Profile page, showing  edit/delete Profiles function :
- - - - -
-![image](https://i.imgur.com/wlfwnhF.png)
 - - - -
+![image](https://i.imgur.com/wlfwnhF.png)
 - - - -
 *8.3 Bugs and Bug Fixing:* 
 - - - -
