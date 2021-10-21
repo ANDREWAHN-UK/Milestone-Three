@@ -240,8 +240,6 @@ nav ul li i {
  max-height: 25vh;
 }
 
-
-
 .homepageBox .inner {
   display: table-cell;
   width: 100%;
@@ -447,7 +445,32 @@ form div i {
   margin: auto;
   width: 35%;
   min-width: 35vw;
-  color: #080808;
+  color: white;
+}
+
+/* The purpose here is to quickly draw attention to the input field labels, 
+as the background can sometimes interfere, no matter the background or fontcolour. The effect does not repeat */
+.review-field label{
+  animation: pulse 2s ;
+  transform: scale(1);
+}
+
+/* the pulse settings below determine how the effect is seen */
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(238, 238, 232, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(238, 238, 232, 0.7);;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(238, 238, 232, 0.7);;
+	}
 }
 
 .accordion {
