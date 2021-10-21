@@ -63,8 +63,27 @@ a {
   border-radius: 50%;
   position: relative;
   transition: transform 0.5s linear;
+  animation: pulse 2s infinite;
+  transform: scale(1);
 }
 
+/* the pulse settings below determine how the effect is seen */
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(158, 149, 27, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(158, 149, 27, 0.7);;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(158, 149, 27, 0.7);;
+	}
+}
 
 .circle button {
   position: absolute;
