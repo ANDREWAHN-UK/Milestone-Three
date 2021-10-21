@@ -16,7 +16,7 @@
     {% if session.user == "admin_user" %}
     <div class="row">
         <div class="col-md-12 col-sm-6">
-            <p>
+            <p class="admin-text">
                 Welcome Administrator. From here you can edit and/or delete all reviews. Just click the accordion,
                 select review, then edit/delete.
             </p>
@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            {% for review in reviews %}
+            {% for review  in reviews [:5] %}
 
             <div class="accordion" id="accordionExample">
 
@@ -91,7 +91,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-12 col-sm-6">
-                    <p>
+                    <p class="admin-text">
                         Here you can edit/delete profiles
                     </p>
                 </div>
