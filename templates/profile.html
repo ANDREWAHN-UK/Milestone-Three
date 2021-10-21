@@ -4,7 +4,14 @@
   <div class="row ">
     <h1>{{username|capitalize}}'s Profile Page</h1>
     <div class="col-md-3 ">
+
+      {% if users.image_url == "" or users.image_url is none %}
+      <img class="card-img" src="{{ url_for('static', filename='images/lion.jpeg') }}" alt="delicious foood">
+      {% else %}
       <img class="user-image" src="{{user_image }}" alt="profile image for {{ username }}">
+      {% endif %}
+
+
 
     </div>
     <div class="col-md-9">
@@ -33,12 +40,11 @@
             <label for="search"></label>
             <i class="fas fa-search"></i><input id="search" name="search" type="text" placeholder="Search Box" />
             <button class="search-button" type="submit">Search</button>
-            <a class="search-button"
-              href="{{ url_for('profile', username=session['user']) }}">Reset</a>
-              
+            <a class="search-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a>
+
           </div>
         </form>
-        
+
       </div>
 
       {% if session.user == "admin_user" %}
@@ -82,8 +88,7 @@
                         Profile</a>
                       <a href="{{ url_for('delete_profile', user_id=user._id) }}" class="delete-review-button">Delete
                         Profile </a>
-                        <a class="review-button"
-                        href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+                      <a class="review-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
 
                     </div>
                   </div>
@@ -123,12 +128,17 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-sm-6">
-                      <img class="card-img" src="{{review.image_url }} " alt="Card image">
+                      {% if review.image_url == "" or review.image_url is none %}
+                      <img class="card-img" src="{{ url_for('static', filename='images/default-food-reviews.jpg') }}"
+                        alt="delicious foood">
+                      {% else %}
+                      <img class="card-img" src="{{review.image_url }} " alt="card image">
+                      {% endif %}
                     </div>
-    
+
                     <div class="col-sm-6">
                       <strong>You visited: {{ review.place_name }}</strong></h5>
-    
+
                       <p class="card-text"> and went there for {{review.visit_type}}<br>
                       </p>
                       <p class="card-text"> on {{review.visit_date}} <br>
@@ -136,10 +146,11 @@
                       <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
                       </p>
                       <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
-                      </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
-                      <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
-                      <a class="review-button"
-                            href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+                      </p><a href="{{ url_for('edit_review', review_id=review._id) }}"
+                        class="edit-review-button">Edit</a>
+                      <a href="{{ url_for('delete_review', review_id=review._id) }}"
+                        class="delete-review-button">Delete</a>
+                      <a class="review-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
                     </div>
                   </div>
                 </div>
@@ -164,56 +175,55 @@
         </div>
       </div>
 
-      
 
-      
 
-        {% for review in reviews %}
-        {% if session.user == review.created_by %}
-        
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseOne">
-                {{ review.place_name }}
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <img class="card-img" src="{{review.image_url }} " alt="Card image">
-                  </div>
-  
-                  <div class="col-sm-6">
-                    <strong>You visited: {{ review.place_name }}</strong></h5>
-  
-                    <p class="card-text"> and went there for {{review.visit_type}}<br>
-                    </p>
-                    <p class="card-text"> on {{review.visit_date}} <br>
-                    </p>
-                    <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
-                    </p>
-                    <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
-                    </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
-                    <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
-                    <a class="review-button"
-                          href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
-                  </div>
+
+
+      {% for review in reviews %}
+      {% if session.user == review.created_by %}
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+              aria-expanded="true" aria-controls="collapseOne">
+              {{ review.place_name }}
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <img class="card-img" src="{{review.image_url }} " alt="Card image">
                 </div>
-  
-  
+
+                <div class="col-sm-6">
+                  <strong>You visited: {{ review.place_name }}</strong></h5>
+
+                  <p class="card-text"> and went there for {{review.visit_type}}<br>
+                  </p>
+                  <p class="card-text"> on {{review.visit_date}} <br>
+                  </p>
+                  <p class="card-text"> and rated it {{review.place_rating}} out of 10 <br>
+                  </p>
+                  <p class="card-text "> Your thoughts: <br> {{review.place_review | safe}}
+                  </p><a href="{{ url_for('edit_review', review_id=review._id) }}" class="edit-review-button">Edit</a>
+                  <a href="{{ url_for('delete_review', review_id=review._id) }}" class="delete-review-button">Delete</a>
+                  <a class="review-button" href="{{ url_for('profile', username=session['user']) }}">Reset</a></p>
+                </div>
               </div>
-  
-  
+
+
             </div>
+
+
           </div>
-  
-  
-        </div>{% endif %}
-        {% endfor %}
+        </div>
+
+
+      </div>{% endif %}
+      {% endfor %}
 
       {% endif %}
 
