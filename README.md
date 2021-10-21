@@ -149,6 +149,7 @@ Frameworks, Libraries & Programs Used:
 - - - - 
 **8. Testing.**
 
+Please refer to the separate [TESTING.md](https://github.com/ANDREWAHN-UK/Milestone-Three/blob/main/TESTING.md) file.
 - - - - 
 **9. Deployment.**
 - - - - 
