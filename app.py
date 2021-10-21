@@ -17,6 +17,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 # NB - most of this follows the Code Institute Mini Project in syntax and logic
+
+
 @app.route("/")
 @app.route("/go_home")
 def go_home():
@@ -150,6 +152,7 @@ def search():
     reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
     return render_template("reviews.html", reviews=reviews)
 
+
 @app.route("/logout")
 def logout():
     flash("Goodbye, thanks for visiting")
@@ -216,7 +219,7 @@ def edit_review(review_id):
     return render_template(
         "edit_review.html", review=review,
         categories=categories, visits=visits, ratings=ratings,)
- 
+
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
@@ -231,4 +234,4 @@ def delete_review(review_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
