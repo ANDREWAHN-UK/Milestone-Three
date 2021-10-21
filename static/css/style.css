@@ -300,6 +300,10 @@ form, .reg-content-edit,
 }
 .reg-content-edit{
   background-image: url(/static/images/lc-beach.jpg);
+  top:0;
+  height: 80%;
+  min-height: 91vh;
+  margin-top: 0;  
 }
 .login-content {
   background-image: url("/static/images/canteras4.jpg");
@@ -313,7 +317,7 @@ form, .reg-content-edit,
 }
 
 /* This affects the form part of the container, */
-.form-reg, .form-login{
+.form-reg, .form-login {
   width: 45%;
   top: 0;
   height: 80%;
